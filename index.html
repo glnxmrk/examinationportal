@@ -416,11 +416,11 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
                             <div style="flex: 1;">
                                 <strong style="font-size: 0.95rem; display: block; margin-bottom: 2px;">Personal Development</strong>
-                                <span style="font-size: 0.75rem; color: var(--success-color); font-weight: 600;">Active</span>
+                                <span style="font-size: 0.75rem; color: var(--error-color); font-weight: 600;">Hidden</span>
                             </div>
                             <div style="display: flex; align-items: center; gap: 12px;">
                                 <label class="switch" onclick="event.stopPropagation();">
-                                    <input type="checkbox" checked="" onchange="toggleSubjectStatus('sub_1768821306849')">
+                                    <input type="checkbox" onchange="toggleSubjectStatus('sub_1768821306849')">
                                     <span class="slider"></span>
                                 </label>
                                 <button class="badge-btn del-btn" style="padding: 4px 8px; font-size: 0.7rem;" onclick="event.stopPropagation(); deleteSubject('sub_1768821306849')">Delete</button>
@@ -1262,7 +1262,7 @@
     </div>
     <div class="form-group">
       <label for="subjectSelect">Subject</label>
-      <select id="subjectSelect" required="" style="width: 100%; padding: 0.8rem; border: 2px solid #ddd; border-radius: 6px; font-size: 1rem;"><option value="">Select a subject...</option><option value="sub_1768821277913">General Knowledge</option></select>
+      <select id="subjectSelect" required="" style="width: 100%; padding: 0.8rem; border: 2px solid #ddd; border-radius: 6px; font-size: 1rem;"><option value="">Select a subject...</option><option value="sub_1768821277913">General Knowledge</option><option value="sub_1768821306849">Personal Development</option></select>
     </div>
     <button class="btn" onclick="startExam()">Start Exam</button>
     <p style="font-size: 0.8rem; color: #666; margin-top: 1rem; text-align: center;">
@@ -1411,7 +1411,7 @@
   {
     "id": "sub_1768821306849",
     "name": "Personal Development",
-    "status": "enabled",
+    "status": "disabled",
     "duration": 60,
     "questions": [
       {
@@ -4141,6 +4141,7 @@
       html2pdf().set(opt).from(element).save();
     }
   </script>
+
 
 
 
