@@ -416,11 +416,11 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
                             <div style="flex: 1;">
                                 <strong style="font-size: 0.95rem; display: block; margin-bottom: 2px;">Personal Development</strong>
-                                <span style="font-size: 0.75rem; color: var(--success-color); font-weight: 600;">Active</span>
+                                <span style="font-size: 0.75rem; color: var(--error-color); font-weight: 600;">Hidden</span>
                             </div>
                             <div style="display: flex; align-items: center; gap: 12px;">
                                 <label class="switch" onclick="event.stopPropagation();">
-                                    <input type="checkbox" checked="" onchange="toggleSubjectStatus('sub_1768821306849')">
+                                    <input type="checkbox" onchange="toggleSubjectStatus('sub_1768821306849')">
                                     <span class="slider"></span>
                                 </label>
                                 <button class="badge-btn del-btn" style="padding: 4px 8px; font-size: 0.7rem;" onclick="event.stopPropagation(); deleteSubject('sub_1768821306849')">Delete</button>
@@ -434,11 +434,11 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
                             <div style="flex: 1;">
                                 <strong style="font-size: 0.95rem; display: block; margin-bottom: 2px;">Practical Research I</strong>
-                                <span style="font-size: 0.75rem; color: var(--success-color); font-weight: 600;">Active</span>
+                                <span style="font-size: 0.75rem; color: var(--error-color); font-weight: 600;">Hidden</span>
                             </div>
                             <div style="display: flex; align-items: center; gap: 12px;">
                                 <label class="switch" onclick="event.stopPropagation();">
-                                    <input type="checkbox" checked="" onchange="toggleSubjectStatus('sub_1768825675494')">
+                                    <input type="checkbox" onchange="toggleSubjectStatus('sub_1768825675494')">
                                     <span class="slider"></span>
                                 </label>
                                 <button class="badge-btn del-btn" style="padding: 4px 8px; font-size: 0.7rem;" onclick="event.stopPropagation(); deleteSubject('sub_1768825675494')">Delete</button>
@@ -1344,7 +1344,7 @@
   {
     "id": "sub_1768821306849",
     "name": "Personal Development",
-    "status": "enabled",
+    "status": "disabled",
     "duration": 60,
     "questions": [
       {
@@ -1902,7 +1902,7 @@
   {
     "id": "sub_1768825675494",
     "name": "Practical Research I",
-    "status": "enabled",
+    "status": "disabled",
     "duration": 60,
     "questions": [
       {
