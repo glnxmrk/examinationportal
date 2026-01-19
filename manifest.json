@@ -2,7 +2,7 @@
     "name": "Secure Quiz Portal",
     "short_name": "QuizPortal",
     "description": "Secure Examination Portal for San Jose Integrated School",
-    "start_url": "Secure_Quiz_Portal_MultiSubject (4).html",
+    "start_url": "index.html",
     "display": "standalone",
     "background_color": "#1b5e20",
     "theme_color": "#1a237e",
@@ -14,4 +14,5 @@
             "purpose": "any maskable"
         }
     ]
+
 }
