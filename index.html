@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Quarter Examination - Secure Portal</title>
-
+  <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#1a237e">
   <link rel="apple-touch-icon" href="icon-512.png">
 
@@ -3157,27 +3157,14 @@
     let QUESTIONS = []; // To hold active questions during exam
 
     // Load subjects from local storage or use defaults
+    // Initialize subjects from defaults (do not store on device for better sync)
     function initDB() {
-      const stored = localStorage.getItem('exam_subjects_db');
-      if (stored) {
-        SUBJECTS_DB = JSON.parse(stored);
-        // Migration: Ensure all subjects have a duration field
-        let migrated = false;
-        SUBJECTS_DB.forEach(s => {
-          if (s.duration === undefined) {
-            s.duration = 30;
-            migrated = true;
-          }
-        });
-        if (migrated) saveDB();
-      } else {
-        SUBJECTS_DB = JSON.parse(JSON.stringify(DEFAULT_SUBJECTS));
-        saveDB();
-      }
+      SUBJECTS_DB = JSON.parse(JSON.stringify(DEFAULT_SUBJECTS));
     }
 
     function saveDB() {
-      localStorage.setItem('exam_subjects_db', JSON.stringify(SUBJECTS_DB));
+      // Intentionally left blank as per user request to not store questions on the device
+      console.log("SaveDB: Questions are not stored on device to ensure direct sync from file.");
     }
 
     initDB();
@@ -3692,7 +3679,12 @@
       // Simply show portal on load
       showPortal();
 
-
+      // Register Service Worker for PWA
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js')
+          .then(() => console.log('Service Worker Registered'))
+          .catch(err => console.error('Service Worker Failed', err));
+      }
     });
 
     function showAlreadySubmitted(data) {
