@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="en">
+
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Quarter Examination - Secure Portal</title>
@@ -344,7 +346,8 @@
 
   <!-- Portal Selection -->
   <div id="portal-section" class="container" style="border-top: 8px solid var(--accent-color); display: none;">
-    <h1 style="background: linear-gradient(90deg, var(--secondary-color), var(--primary-color)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-size: 2rem; margin-bottom: 0.5rem;">
+    <h1
+      style="background: linear-gradient(90deg, var(--secondary-color), var(--primary-color)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-size: 2rem; margin-bottom: 0.5rem;">
       San Jose Integrated School</h1>
     <h2 style="font-size: 1.2rem; color: #555; margin-bottom: 2rem;">Examination Portal</h2>
     <p style="text-align: center; color: #888; margin-bottom: 2rem; font-size: 0.9rem;">Empowering futures through
@@ -365,15 +368,18 @@
 
   <!-- Teacher Login Section -->
   <div id="teacher-login-section" class="container" style="display: none;">
-    <button onclick="showPortal()" style="background:none; border:none; cursor:pointer; color: var(--primary-color); font-weight: bold; margin-bottom: 1rem;">←
+    <button onclick="showPortal()"
+      style="background:none; border:none; cursor:pointer; color: var(--primary-color); font-weight: bold; margin-bottom: 1rem;">←
       Back</button>
     <h2>Teacher Access</h2>
     <div class="form-group">
       <label for="teacherPasscode">Access Code</label>
-      <input type="password" id="teacherPasscode" placeholder="Enter secret code" style="width: 100%; padding: 0.8rem; border: 2px solid #ddd; border-radius: 6px;">
+      <input type="password" id="teacherPasscode" placeholder="Enter secret code"
+        style="width: 100%; padding: 0.8rem; border: 2px solid #ddd; border-radius: 6px;">
     </div>
     <button class="btn" onclick="verifyTeacher()">Enter Dashboard</button>
-    <p id="teacher-auth-error" style="color: var(--error-color); font-size: 0.9rem; margin-top: 1rem; text-align: center; display: none;">
+    <p id="teacher-auth-error"
+      style="color: var(--error-color); font-size: 0.9rem; margin-top: 1rem; text-align: center; display: none;">
       Invalid access code.</p>
   </div>
 
@@ -389,92 +395,109 @@
       <div style="background: #f9f9f9; padding: 1rem; border-radius: 8px; border: 1px solid #ddd;">
         <h3 style="font-size: 1rem; margin-bottom: 1rem; display: flex; justify-content: space-between;">
           Subjects
-          <button class="badge-btn" style="background: var(--primary-color); color: white;" onclick="promptAddSubject()">+ Add</button>
+          <button class="badge-btn" style="background: var(--primary-color); color: white;"
+            onclick="promptAddSubject()">+ Add</button>
         </h3>
         <div id="subject-list">
-                    <div class="subject-item" style="padding: 1rem; border: 1px solid #eee; 
+          <div class="subject-item" style="padding: 1rem; border: 1px solid #eee; 
                         background: white; border-radius: 8px; margin-bottom: 10px; cursor: pointer;
                         box-shadow: none; transition: all 0.2s;" onclick="selectSubject('sub_1768821277913')">
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
-                            <div style="flex: 1;">
-                                <strong style="font-size: 0.95rem; display: block; margin-bottom: 2px;">General Knowledge</strong>
-                                <span style="font-size: 0.75rem; color: var(--success-color); font-weight: 600;">Active</span>
-                            </div>
-                            <div style="display: flex; align-items: center; gap: 12px;">
-                                <label class="switch" onclick="event.stopPropagation();">
-                                    <input type="checkbox" checked="" onchange="toggleSubjectStatus('sub_1768821277913')">
-                                    <span class="slider"></span>
-                                </label>
-                                <button class="badge-btn del-btn" style="padding: 4px 8px; font-size: 0.7rem;" onclick="event.stopPropagation(); deleteSubject('sub_1768821277913')">Delete</button>
-                            </div>
-                        </div>
-                    </div>
-                
-                    <div class="subject-item" style="padding: 1rem; border: 1px solid #eee; 
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <div style="flex: 1;">
+                <strong style="font-size: 0.95rem; display: block; margin-bottom: 2px;">General Knowledge</strong>
+                <span style="font-size: 0.75rem; color: var(--success-color); font-weight: 600;">Active</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <label class="switch" onclick="event.stopPropagation();">
+                  <input type="checkbox" checked="" onchange="toggleSubjectStatus('sub_1768821277913')">
+                  <span class="slider"></span>
+                </label>
+                <button class="badge-btn del-btn" style="padding: 4px 8px; font-size: 0.7rem;"
+                  onclick="event.stopPropagation(); deleteSubject('sub_1768821277913')">Delete</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="subject-item" style="padding: 1rem; border: 1px solid #eee; 
                         background: white; border-radius: 8px; margin-bottom: 10px; cursor: pointer;
                         box-shadow: none; transition: all 0.2s;" onclick="selectSubject('sub_1768821306849')">
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
-                            <div style="flex: 1;">
-                                <strong style="font-size: 0.95rem; display: block; margin-bottom: 2px;">Personal Development</strong>
-                                <span style="font-size: 0.75rem; color: var(--error-color); font-weight: 600;">Hidden</span>
-                            </div>
-                            <div style="display: flex; align-items: center; gap: 12px;">
-                                <label class="switch" onclick="event.stopPropagation();">
-                                    <input type="checkbox" onchange="toggleSubjectStatus('sub_1768821306849')">
-                                    <span class="slider"></span>
-                                </label>
-                                <button class="badge-btn del-btn" style="padding: 4px 8px; font-size: 0.7rem;" onclick="event.stopPropagation(); deleteSubject('sub_1768821306849')">Delete</button>
-                            </div>
-                        </div>
-                    </div>
-                
-                    <div class="subject-item" style="padding: 1rem; border: 1px solid #eee; 
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <div style="flex: 1;">
+                <strong style="font-size: 0.95rem; display: block; margin-bottom: 2px;">Personal Development</strong>
+                <span style="font-size: 0.75rem; color: var(--error-color); font-weight: 600;">Hidden</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <label class="switch" onclick="event.stopPropagation();">
+                  <input type="checkbox" onchange="toggleSubjectStatus('sub_1768821306849')">
+                  <span class="slider"></span>
+                </label>
+                <button class="badge-btn del-btn" style="padding: 4px 8px; font-size: 0.7rem;"
+                  onclick="event.stopPropagation(); deleteSubject('sub_1768821306849')">Delete</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="subject-item" style="padding: 1rem; border: 1px solid #eee; 
                         background: white; border-radius: 8px; margin-bottom: 10px; cursor: pointer;
                         box-shadow: none; transition: all 0.2s;" onclick="selectSubject('sub_1768825675494')">
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
-                            <div style="flex: 1;">
-                                <strong style="font-size: 0.95rem; display: block; margin-bottom: 2px;">Practical Research I</strong>
-                                <span style="font-size: 0.75rem; color: var(--error-color); font-weight: 600;">Hidden</span>
-                            </div>
-                            <div style="display: flex; align-items: center; gap: 12px;">
-                                <label class="switch" onclick="event.stopPropagation();">
-                                    <input type="checkbox" onchange="toggleSubjectStatus('sub_1768825675494')">
-                                    <span class="slider"></span>
-                                </label>
-                                <button class="badge-btn del-btn" style="padding: 4px 8px; font-size: 0.7rem;" onclick="event.stopPropagation(); deleteSubject('sub_1768825675494')">Delete</button>
-                            </div>
-                        </div>
-                    </div>
-                
-                    <div class="subject-item" style="padding: 1rem; border: 1px solid #eee; 
-                        background: white; border-radius: 8px; margin-bottom: 10px; cursor: pointer;
-                        box-shadow: none; transition: all 0.2s;" onclick="selectSubject('sub_1768829089450')">
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
-                            <div style="flex: 1;">
-                                <strong style="font-size: 0.95rem; display: block; margin-bottom: 2px;">H.O.P.E. 4</strong>
-                                <span style="font-size: 0.75rem; color: var(--error-color); font-weight: 600;">Hidden</span>
-                            </div>
-                            <div style="display: flex; align-items: center; gap: 12px;">
-                                <label class="switch" onclick="event.stopPropagation();">
-                                    <input type="checkbox" onchange="toggleSubjectStatus('sub_1768829089450')">
-                                    <span class="slider"></span>
-                                </label>
-                                <button class="badge-btn del-btn" style="padding: 4px 8px; font-size: 0.7rem;" onclick="event.stopPropagation(); deleteSubject('sub_1768829089450')">Delete</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <div style="flex: 1;">
+                <strong style="font-size: 0.95rem; display: block; margin-bottom: 2px;">Practical Research I</strong>
+                <span style="font-size: 0.75rem; color: var(--error-color); font-weight: 600;">Hidden</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <label class="switch" onclick="event.stopPropagation();">
+                  <input type="checkbox" onchange="toggleSubjectStatus('sub_1768825675494')">
+                  <span class="slider"></span>
+                </label>
+                <button class="badge-btn del-btn" style="padding: 4px 8px; font-size: 0.7rem;"
+                  onclick="event.stopPropagation(); deleteSubject('sub_1768825675494')">Delete</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="subject-item" style="padding: 1rem; border: 1px solid var(--primary-color); 
+                        background: #f0f4ff; border-radius: 8px; margin-bottom: 10px; cursor: pointer;
+                        box-shadow: 0 4px 12px rgba(26, 35, 126, 0.1); transition: all 0.2s;"
+            onclick="selectSubject('sub_1768829089450')">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <div style="flex: 1;">
+                <strong style="font-size: 0.95rem; display: block; margin-bottom: 2px;">H.O.P.E. 4</strong>
+                <span style="font-size: 0.75rem; color: var(--error-color); font-weight: 600;">Hidden</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <label class="switch" onclick="event.stopPropagation();">
+                  <input type="checkbox" onchange="toggleSubjectStatus('sub_1768829089450')">
+                  <span class="slider"></span>
+                </label>
+                <button class="badge-btn del-btn" style="padding: 4px 8px; font-size: 0.7rem;"
+                  onclick="event.stopPropagation(); deleteSubject('sub_1768829089450')">Delete</button>
+              </div>
+            </div>
+          </div>
+        </div>
 
         <!-- Subject Settings Area -->
-        <div id="subject-settings-panel" style="margin-top: 1.5rem; padding: 1rem; background: rgb(255, 255, 255); border-radius: 8px; border: 1px solid rgb(221, 221, 221); display: block;">
+        <div id="subject-settings-panel"
+          style="margin-top: 1.5rem; padding: 1rem; background: rgb(255, 255, 255); border-radius: 8px; border: 1px solid rgb(221, 221, 221); display: block;">
           <h4 style="font-size: 0.85rem; margin-bottom: 0.8rem; color: #444;">Subject Settings</h4>
           <div style="margin-bottom: 10px;">
             <label style="font-size: 0.75rem; color: #666; display: block; margin-bottom: 4px;">Exam
               Duration (minutes)</label>
-            <input type="number" id="sub-duration" min="1" max="300" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px; font-size: 0.9rem;">
+            <input type="number" id="sub-duration" min="1" max="300"
+              style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px; font-size: 0.9rem;">
           </div>
-          <button class="badge-btn" style="width: 100%; background: var(--secondary-color); color: white;" onclick="updateSubjectSettings()">Save Settings</button>
-          <p id="settings-feedback" style="font-size: 0.7rem; color: var(--success-color); margin-top: 5px; display: none;">Settings
+          <div style="margin-bottom: 15px;">
+            <label style="font-size: 0.75rem; color: #666; display: block; margin-bottom: 4px;">Subject Password
+              (Optional)</label>
+            <input type="text" id="sub-password" placeholder="No password set"
+              style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px; font-size: 0.9rem;">
+            <small style="font-size: 0.65rem; color: #888;">Leave empty for no password requirement.</small>
+          </div>
+          <button class="badge-btn" style="width: 100%; background: var(--secondary-color); color: white;"
+            onclick="updateSubjectSettings()">Save Settings</button>
+          <p id="settings-feedback"
+            style="font-size: 0.7rem; color: var(--success-color); margin-top: 5px; display: none;">Settings
             saved!</p>
         </div>
       </div>
@@ -483,7 +506,8 @@
       <div>
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
           <h3 id="current-subject-title" style="font-size: 1rem;">Subject: H.O.P.E. 4</h3>
-          <button id="add-q-btn" class="badge-btn" style="background: var(--primary-color); color: white; display: block;" onclick="showQuestionForm()">+ Add
+          <button id="add-q-btn" class="badge-btn"
+            style="background: var(--primary-color); color: white; display: block;" onclick="showQuestionForm()">+ Add
             Question</button>
         </div>
         <div id="question-list-container">
@@ -492,7 +516,8 @@
               <strong>1. What is the primary purpose of a tent?</strong>
               <div style="font-size: 0.8rem; color: #666; margin-top: 4px;">
                 Choices: To store food away from animals, To provide portable shelter during outdoor activities, To mark
-                camping territory, To serve as a cooking area | <span style="color: var(--success-color); font-weight:bold;">Ans: To provide portable shelter during outdoor
+                camping territory, To serve as a cooking area | <span
+                  style="color: var(--success-color); font-weight:bold;">Ans: To provide portable shelter during outdoor
                   activities</span>
               </div>
             </div>
@@ -507,7 +532,8 @@
               <strong>2. Which tent type would be most suitable for a solo hiker concerned about weight and stealth
                 camping?</strong>
               <div style="font-size: 0.8rem; color: #666; margin-top: 4px;">
-                Choices: Ridge Tent, Dome Tent, Bivy Tent, Tunnel Tent | <span style="color: var(--success-color); font-weight:bold;">Ans: Bivy Tent</span>
+                Choices: Ridge Tent, Dome Tent, Bivy Tent, Tunnel Tent | <span
+                  style="color: var(--success-color); font-weight:bold;">Ans: Bivy Tent</span>
               </div>
             </div>
             <div class="q-actions">
@@ -521,7 +547,8 @@
               <strong>3. A family of five plans a car camping trip in rainy weather. Which tent should they
                 avoid?</strong>
               <div style="font-size: 0.8rem; color: #666; margin-top: 4px;">
-                Choices: Geodesic Tent, Tunnel Tent, Dome Tent (large size), Ridge Tent | <span style="color: var(--success-color); font-weight:bold;">Ans: Tunnel Tent</span>
+                Choices: Geodesic Tent, Tunnel Tent, Dome Tent (large size), Ridge Tent | <span
+                  style="color: var(--success-color); font-weight:bold;">Ans: Tunnel Tent</span>
               </div>
             </div>
             <div class="q-actions">
@@ -534,7 +561,8 @@
             <div style="flex: 1; margin-right: 15px;">
               <strong>4. What is a common disadvantage of Ridge/A-Frame Tents?</strong>
               <div style="font-size: 0.8rem; color: #666; margin-top: 4px;">
-                Choices: Too spacious, Poor rain resistance, Lack of headroom, Difficult to pack | <span style="color: var(--success-color); font-weight:bold;">Ans: Lack of headroom</span>
+                Choices: Too spacious, Poor rain resistance, Lack of headroom, Difficult to pack | <span
+                  style="color: var(--success-color); font-weight:bold;">Ans: Lack of headroom</span>
               </div>
             </div>
             <div class="q-actions">
@@ -548,7 +576,8 @@
               <strong>5. If you are camping in an area with strong winds, which tent design would provide the best
                 stability due to its pole structure?</strong>
               <div style="font-size: 0.8rem; color: #666; margin-top: 4px;">
-                Choices: Dome Tent, Geodesic Tent, Tunnel Tent, Bivy Tent | <span style="color: var(--success-color); font-weight:bold;">Ans: Geodesic Tent</span>
+                Choices: Dome Tent, Geodesic Tent, Tunnel Tent, Bivy Tent | <span
+                  style="color: var(--success-color); font-weight:bold;">Ans: Geodesic Tent</span>
               </div>
             </div>
             <div class="q-actions">
@@ -606,7 +635,8 @@
             <div style="flex: 1; margin-right: 15px;">
               <strong>9. Which feature is NOT typically desirable in a Bivy Tent?</strong>
               <div style="font-size: 0.8rem; color: #666; margin-top: 4px;">
-                Choices: Lightweight, Large porch area, Built-in bug net, Good ventilation | <span style="color: var(--success-color); font-weight:bold;">Ans: Large porch area</span>
+                Choices: Lightweight, Large porch area, Built-in bug net, Good ventilation | <span
+                  style="color: var(--success-color); font-weight:bold;">Ans: Large porch area</span>
               </div>
             </div>
             <div class="q-actions">
@@ -619,7 +649,8 @@
             <div style="flex: 1; margin-right: 15px;">
               <strong>10. Which tent type is described as 'essentially a dome tent but with more poles'?</strong>
               <div style="font-size: 0.8rem; color: #666; margin-top: 4px;">
-                Choices: Tunnel Tent, Geodesic Tent, Ridge Tent, Bivy Tent | <span style="color: var(--success-color); font-weight:bold;">Ans: Geodesic Tent</span>
+                Choices: Tunnel Tent, Geodesic Tent, Ridge Tent, Bivy Tent | <span
+                  style="color: var(--success-color); font-weight:bold;">Ans: Geodesic Tent</span>
               </div>
             </div>
             <div class="q-actions">
@@ -632,7 +663,8 @@
             <div style="flex: 1; margin-right: 15px;">
               <strong>11. Which knot is known as a stopper knot and is used in sailing and climbing?</strong>
               <div style="font-size: 0.8rem; color: #666; margin-top: 4px;">
-                Choices: Sheet Bend, Figure-of-Eight Knot, Square Knot, Slip Knot | <span style="color: var(--success-color); font-weight:bold;">Ans: Figure-of-Eight Knot</span>
+                Choices: Sheet Bend, Figure-of-Eight Knot, Square Knot, Slip Knot | <span
+                  style="color: var(--success-color); font-weight:bold;">Ans: Figure-of-Eight Knot</span>
               </div>
             </div>
             <div class="q-actions">
@@ -646,7 +678,8 @@
               <strong>12. You need to join two ropes of different thicknesses securely. Which knot is most
                 appropriate?</strong>
               <div style="font-size: 0.8rem; color: #666; margin-top: 4px;">
-                Choices: Overhand Knot, Square Knot, Sheet Bend, Half Hitch | <span style="color: var(--success-color); font-weight:bold;">Ans: Sheet Bend</span>
+                Choices: Overhand Knot, Square Knot, Sheet Bend, Half Hitch | <span
+                  style="color: var(--success-color); font-weight:bold;">Ans: Sheet Bend</span>
               </div>
             </div>
             <div class="q-actions">
@@ -674,7 +707,8 @@
             <div style="flex: 1; margin-right: 15px;">
               <strong>14. The Square Knot is also known as:</strong>
               <div style="font-size: 0.8rem; color: #666; margin-top: 4px;">
-                Choices: Reef Knot, Hangman's Knot, Bowline, Fisherman's Knot | <span style="color: var(--success-color); font-weight:bold;">Ans: Reef Knot</span>
+                Choices: Reef Knot, Hangman's Knot, Bowline, Fisherman's Knot | <span
+                  style="color: var(--success-color); font-weight:bold;">Ans: Reef Knot</span>
               </div>
             </div>
             <div class="q-actions">
@@ -688,7 +722,8 @@
               <strong>15. In a survival scenario, which knot would be best for setting up a temporary shelter using a
                 tarp and tree?</strong>
               <div style="font-size: 0.8rem; color: #666; margin-top: 4px;">
-                Choices: Noose Knot, Figure-of-Eight, Overhand Knot, Slip Knot with adjustable loop | <span style="color: var(--success-color); font-weight:bold;">Ans: Slip Knot with adjustable loop</span>
+                Choices: Noose Knot, Figure-of-Eight, Overhand Knot, Slip Knot with adjustable loop | <span
+                  style="color: var(--success-color); font-weight:bold;">Ans: Slip Knot with adjustable loop</span>
               </div>
             </div>
             <div class="q-actions">
@@ -731,7 +766,8 @@
             <div style="flex: 1; margin-right: 15px;">
               <strong>18. Which knot becomes tighter under load but can be easily loosened?</strong>
               <div style="font-size: 0.8rem; color: #666; margin-top: 4px;">
-                Choices: Square Knot, Sheet Bend, Noose Knot, Overhand Knot | <span style="color: var(--success-color); font-weight:bold;">Ans: Noose Knot</span>
+                Choices: Square Knot, Sheet Bend, Noose Knot, Overhand Knot | <span
+                  style="color: var(--success-color); font-weight:bold;">Ans: Noose Knot</span>
               </div>
             </div>
             <div class="q-actions">
@@ -745,7 +781,8 @@
               <strong>19. If you need to quickly tie a knot that can be released with one pull, which do you
                 choose?</strong>
               <div style="font-size: 0.8rem; color: #666; margin-top: 4px;">
-                Choices: Figure-of-Eight, Slip Knot, Square Knot, Half Hitch | <span style="color: var(--success-color); font-weight:bold;">Ans: Slip Knot</span>
+                Choices: Figure-of-Eight, Slip Knot, Square Knot, Half Hitch | <span
+                  style="color: var(--success-color); font-weight:bold;">Ans: Slip Knot</span>
               </div>
             </div>
             <div class="q-actions">
@@ -758,7 +795,8 @@
             <div style="flex: 1; margin-right: 15px;">
               <strong>20. The ______ is a bend knot used to join two ropes of different diameters.</strong>
               <div style="font-size: 0.8rem; color: #666; margin-top: 4px;">
-                Choices: Overhand Knot, Square Knot, Sheet Bend, Half Hitch | <span style="color: var(--success-color); font-weight:bold;">Ans: Sheet Bend</span>
+                Choices: Overhand Knot, Square Knot, Sheet Bend, Half Hitch | <span
+                  style="color: var(--success-color); font-weight:bold;">Ans: Sheet Bend</span>
               </div>
             </div>
             <div class="q-actions">
@@ -771,7 +809,8 @@
             <div style="flex: 1; margin-right: 15px;">
               <strong>21. Outdoor recreation is defined as an activity done during ______ for personal reasons.</strong>
               <div style="font-size: 0.8rem; color: #666; margin-top: 4px;">
-                Choices: Work time, Subsistence time, Free time, Existence time | <span style="color: var(--success-color); font-weight:bold;">Ans: Free time</span>
+                Choices: Work time, Subsistence time, Free time, Existence time | <span
+                  style="color: var(--success-color); font-weight:bold;">Ans: Free time</span>
               </div>
             </div>
             <div class="q-actions">
@@ -785,7 +824,8 @@
               <strong>22. Why is free time essential for outdoor recreation according to Clayne R. Jensen?</strong>
               <div style="font-size: 0.8rem; color: #666; margin-top: 4px;">
                 Choices: It is the only time when people are not tired, It is the period after existence and subsistence
-                time, It is mandated by law, It is when weather is best | <span style="color: var(--success-color); font-weight:bold;">Ans: It is the period after existence and
+                time, It is mandated by law, It is when weather is best | <span
+                  style="color: var(--success-color); font-weight:bold;">Ans: It is the period after existence and
                   subsistence time</span>
               </div>
             </div>
@@ -799,7 +839,8 @@
             <div style="flex: 1; margin-right: 15px;">
               <strong>23. Which of the following is NOT a benefit of outdoor recreation?</strong>
               <div style="font-size: 0.8rem; color: #666; margin-top: 4px;">
-                Choices: Spiritual benefits, Economic dependency, Social benefits, Physical health benefits | <span style="color: var(--success-color); font-weight:bold;">Ans: Economic dependency</span>
+                Choices: Spiritual benefits, Economic dependency, Social benefits, Physical health benefits | <span
+                  style="color: var(--success-color); font-weight:bold;">Ans: Economic dependency</span>
               </div>
             </div>
             <div class="q-actions">
@@ -812,7 +853,8 @@
             <div style="flex: 1; margin-right: 15px;">
               <strong>24. The Philippines has the ______ longest coastline in the world.</strong>
               <div style="font-size: 0.8rem; color: #666; margin-top: 4px;">
-                Choices: Third, Fifth, Seventh, Tenth | <span style="color: var(--success-color); font-weight:bold;">Ans: Fifth</span>
+                Choices: Third, Fifth, Seventh, Tenth | <span
+                  style="color: var(--success-color); font-weight:bold;">Ans: Fifth</span>
               </div>
             </div>
             <div class="q-actions">
@@ -825,7 +867,8 @@
             <div style="flex: 1; margin-right: 15px;">
               <strong>25. You want an outdoor activity that combines land and water. Which do you choose?</strong>
               <div style="font-size: 0.8rem; color: #666; margin-top: 4px;">
-                Choices: Parasailing, Canyoneering, Bird-watching, Rock climbing | <span style="color: var(--success-color); font-weight:bold;">Ans: Canyoneering</span>
+                Choices: Parasailing, Canyoneering, Bird-watching, Rock climbing | <span
+                  style="color: var(--success-color); font-weight:bold;">Ans: Canyoneering</span>
               </div>
             </div>
             <div class="q-actions">
@@ -839,7 +882,8 @@
               <strong>26. Why might mountain trekking be classified under Trail Class 3?</strong>
               <div style="font-size: 0.8rem; color: #666; margin-top: 4px;">
                 Choices: It requires scrambling using hands for balance, It is a simple stroll, It needs artificial
-                climbing methods, It is only for experts with ropes | <span style="color: var(--success-color); font-weight:bold;">Ans: It requires scrambling using hands for
+                climbing methods, It is only for experts with ropes | <span
+                  style="color: var(--success-color); font-weight:bold;">Ans: It requires scrambling using hands for
                   balance</span>
               </div>
             </div>
@@ -896,7 +940,8 @@
             <div style="flex: 1; margin-right: 15px;">
               <strong>30. Which mountain is known as the 'playground of the gods'?</strong>
               <div style="font-size: 0.8rem; color: #666; margin-top: 4px;">
-                Choices: Mt. Apo, Mt. Pulag, Mt. Pinatubo, Mt. Guiting-Guiting | <span style="color: var(--success-color); font-weight:bold;">Ans: Mt. Pulag</span>
+                Choices: Mt. Apo, Mt. Pulag, Mt. Pinatubo, Mt. Guiting-Guiting | <span
+                  style="color: var(--success-color); font-weight:bold;">Ans: Mt. Pulag</span>
               </div>
             </div>
             <div class="q-actions">
@@ -909,7 +954,8 @@
             <div style="flex: 1; margin-right: 15px;">
               <strong>31. Why is Mt. Pinatubo's height now 1,486 meters instead of 1,745 meters?</strong>
               <div style="font-size: 0.8rem; color: #666; margin-top: 4px;">
-                Choices: Erosion, Volcanic eruption destroyed the summit, Measurement error, Landslide | <span style="color: var(--success-color); font-weight:bold;">Ans: Volcanic eruption destroyed the
+                Choices: Erosion, Volcanic eruption destroyed the summit, Measurement error, Landslide | <span
+                  style="color: var(--success-color); font-weight:bold;">Ans: Volcanic eruption destroyed the
                   summit</span>
               </div>
             </div>
@@ -924,7 +970,8 @@
               <strong>32. What makes Mt. Kitanglad Range ecologically significant?</strong>
               <div style="font-size: 0.8rem; color: #666; margin-top: 4px;">
                 Choices: It has the tallest peak in Luzon, It contains virgin forests and high biodiversity, It is the
-                most active volcano, It is the easiest to climb | <span style="color: var(--success-color); font-weight:bold;">Ans: It contains virgin forests and high
+                most active volcano, It is the easiest to climb | <span
+                  style="color: var(--success-color); font-weight:bold;">Ans: It contains virgin forests and high
                   biodiversity</span>
               </div>
             </div>
@@ -938,7 +985,8 @@
             <div style="flex: 1; margin-right: 15px;">
               <strong>33. Who said, 'It is not the mountain we conquer, but ourselves'?</strong>
               <div style="font-size: 0.8rem; color: #666; margin-top: 4px;">
-                Choices: Anijolette Dorado, Sir Edmund Hillary, Clayne R. Jensen, CNN Travel | <span style="color: var(--success-color); font-weight:bold;">Ans: Sir Edmund Hillary</span>
+                Choices: Anijolette Dorado, Sir Edmund Hillary, Clayne R. Jensen, CNN Travel | <span
+                  style="color: var(--success-color); font-weight:bold;">Ans: Sir Edmund Hillary</span>
               </div>
             </div>
             <div class="q-actions">
@@ -951,7 +999,8 @@
             <div style="flex: 1; margin-right: 15px;">
               <strong>34. If you want to see a 'saw-toothed' mountain ridge, where should you go?</strong>
               <div style="font-size: 0.8rem; color: #666; margin-top: 4px;">
-                Choices: Romblon, Cavite, Zambales, Benguet | <span style="color: var(--success-color); font-weight:bold;">Ans: Romblon</span>
+                Choices: Romblon, Cavite, Zambales, Benguet | <span
+                  style="color: var(--success-color); font-weight:bold;">Ans: Romblon</span>
               </div>
             </div>
             <div class="q-actions">
@@ -964,7 +1013,8 @@
             <div style="flex: 1; margin-right: 15px;">
               <strong>35. What is the main reason people engage in outdoor recreation?</strong>
               <div style="font-size: 0.8rem; color: #666; margin-top: 4px;">
-                Choices: To earn money, For personal satisfaction and enjoyment, To avoid work, To follow trends | <span style="color: var(--success-color); font-weight:bold;">Ans: For personal satisfaction and
+                Choices: To earn money, For personal satisfaction and enjoyment, To avoid work, To follow trends | <span
+                  style="color: var(--success-color); font-weight:bold;">Ans: For personal satisfaction and
                   enjoyment</span>
               </div>
             </div>
@@ -995,7 +1045,8 @@
               <strong>37. A camper used a Square Knot to join climbing ropes, but it failed. Why?</strong>
               <div style="font-size: 0.8rem; color: #666; margin-top: 4px;">
                 Choices: Square Knots slip under load, Square Knots are only for first aid, Square Knots require ropes
-                of different sizes, Square Knots are only for decorative purposes | <span style="color: var(--success-color); font-weight:bold;">Ans: Square Knots slip under load</span>
+                of different sizes, Square Knots are only for decorative purposes | <span
+                  style="color: var(--success-color); font-weight:bold;">Ans: Square Knots slip under load</span>
               </div>
             </div>
             <div class="q-actions">
@@ -1010,7 +1061,8 @@
                 rope.</strong>
               <div style="font-size: 0.8rem; color: #666; margin-top: 4px;">
                 Choices: Two Half Hitches + Sheet Bend, Figure-of-Eight loop + Slip Knot adjustment, Square Knot +
-                Overhand backup, Noose Knot + Slip Knot release | <span style="color: var(--success-color); font-weight:bold;">Ans: Figure-of-Eight loop + Slip Knot
+                Overhand backup, Noose Knot + Slip Knot release | <span
+                  style="color: var(--success-color); font-weight:bold;">Ans: Figure-of-Eight loop + Slip Knot
                   adjustment</span>
               </div>
             </div>
@@ -1040,7 +1092,8 @@
               <strong>40. Which mountain would be best for a beginner who wants a manageable climb with a scenic
                 view?</strong>
               <div style="font-size: 0.8rem; color: #666; margin-top: 4px;">
-                Choices: Mt. Apo, Mt. Pulag, Mt. Pico de Loro, Mt. Kanla-on | <span style="color: var(--success-color); font-weight:bold;">Ans: Mt. Pico de Loro</span>
+                Choices: Mt. Apo, Mt. Pulag, Mt. Pico de Loro, Mt. Kanla-on | <span
+                  style="color: var(--success-color); font-weight:bold;">Ans: Mt. Pico de Loro</span>
               </div>
             </div>
             <div class="q-actions">
@@ -1086,7 +1139,8 @@
               <strong>43. Which statement about outdoor recreation is FALSE?</strong>
               <div style="font-size: 0.8rem; color: #666; margin-top: 4px;">
                 Choices: It must be done in natural environments only, It can have economic benefits, It contributes to
-                psycho-emotional health, It is done during free time | <span style="color: var(--success-color); font-weight:bold;">Ans: It must be done in natural environments
+                psycho-emotional health, It is done during free time | <span
+                  style="color: var(--success-color); font-weight:bold;">Ans: It must be done in natural environments
                   only</span>
               </div>
             </div>
@@ -1102,7 +1156,8 @@
                 Kitanglad?</strong>
               <div style="font-size: 0.8rem; color: #666; margin-top: 4px;">
                 Choices: Increased trail erosion and wildlife disturbance, Decreased tourism revenue, Reduced need for
-                guides, Improved local infrastructure only | <span style="color: var(--success-color); font-weight:bold;">Ans: Increased trail erosion and wildlife
+                guides, Improved local infrastructure only | <span
+                  style="color: var(--success-color); font-weight:bold;">Ans: Increased trail erosion and wildlife
                   disturbance</span>
               </div>
             </div>
@@ -1118,7 +1173,8 @@
                 principles.</strong>
               <div style="font-size: 0.8rem; color: #666; margin-top: 4px;">
                 Choices: Use biodegradable pegs, avoid cutting live branches for knots, Leave ropes tied to trees for
-                next campers, Bury tent pegs after use, Use only Square Knots for easy removal | <span style="color: var(--success-color); font-weight:bold;">Ans: Use biodegradable pegs, avoid cutting live
+                next campers, Bury tent pegs after use, Use only Square Knots for easy removal | <span
+                  style="color: var(--success-color); font-weight:bold;">Ans: Use biodegradable pegs, avoid cutting live
                   branches for knots</span>
               </div>
             </div>
@@ -1133,7 +1189,8 @@
               <strong>46. Why is the story of Anijolette 'Babeyboo' Dorado significant in outdoor recreation?</strong>
               <div style="font-size: 0.8rem; color: #666; margin-top: 4px;">
                 Choices: Shows age is not a barrier to outdoor engagement, Promotes competitive climbing, Highlights the
-                dangers of hiking with children, Encourages professional mountaineering only | <span style="color: var(--success-color); font-weight:bold;">Ans: Shows age is not a barrier to outdoor
+                dangers of hiking with children, Encourages professional mountaineering only | <span
+                  style="color: var(--success-color); font-weight:bold;">Ans: Shows age is not a barrier to outdoor
                   engagement</span>
               </div>
             </div>
@@ -1149,7 +1206,8 @@
                 prioritize?</strong>
               <div style="font-size: 0.8rem; color: #666; margin-top: 4px;">
                 Choices: Dome tent with good ventilation, Ridge tent with steep roof, Tunnel tent with large vestibule,
-                Geodesic tent with high waterproof rating | <span style="color: var(--success-color); font-weight:bold;">Ans: Ridge tent with steep roof</span>
+                Geodesic tent with high waterproof rating | <span
+                  style="color: var(--success-color); font-weight:bold;">Ans: Ridge tent with steep roof</span>
               </div>
             </div>
             <div class="q-actions">
@@ -1195,7 +1253,8 @@
               <strong>50. Which mountain's history includes both wartime significance and natural oasis
                 features?</strong>
               <div style="font-size: 0.8rem; color: #666; margin-top: 4px;">
-                Choices: Mt. Mariveles - Tarak Ridge, Mt. Pulag, Mt. Kanla-on, Mt. Pinatubo | <span style="color: var(--success-color); font-weight:bold;">Ans: Mt. Mariveles - Tarak Ridge</span>
+                Choices: Mt. Mariveles - Tarak Ridge, Mt. Pulag, Mt. Kanla-on, Mt. Pinatubo | <span
+                  style="color: var(--success-color); font-weight:bold;">Ans: Mt. Mariveles - Tarak Ridge</span>
               </div>
             </div>
             <div class="q-actions">
@@ -1212,8 +1271,10 @@
       <div style="display: flex; flex-wrap: wrap; gap: 10px;">
         <button class="badge-btn" style="background: #4caf50; color: white; flex: 1;" onclick="exportQuestionsJSON()">💾
           Export JSON</button>
-        <button class="badge-btn" style="background: #2196f3; color: white; flex: 1;" onclick="document.getElementById('importFile').click()">📂 Import JSON</button>
-        <button class="badge-btn" style="background: #e91e63; color: white; flex: 1; min-width: 150px;" onclick="downloadUpdatedApp()">🚀 Download App (Save to File)</button>
+        <button class="badge-btn" style="background: #2196f3; color: white; flex: 1;"
+          onclick="document.getElementById('importFile').click()">📂 Import JSON</button>
+        <button class="badge-btn" style="background: #e91e63; color: white; flex: 1; min-width: 150px;"
+          onclick="downloadUpdatedApp()">🚀 Download App (Save to File)</button>
       </div>
       <input type="file" id="importFile" style="display: none;" accept=".json" onchange="importQuestionsJSON(event)">
     </div>
@@ -1221,23 +1282,30 @@
 
   <!-- Question Form Modal (Simplified Overlay) -->
   <div id="q-form-overlay" class="warning-overlay" style="background: rgba(0, 0, 0, 0.85); display: none;">
-    <div class="modal-content" style="max-width: 700px; max-height: 90vh; overflow-y: auto; color: black; text-align: left;">
+    <div class="modal-content"
+      style="max-width: 700px; max-height: 90vh; overflow-y: auto; color: black; text-align: left;">
       <h2 id="q-form-title">Add Question</h2>
       <input type="hidden" id="edit-q-index" value="-1">
       <div class="form-group">
         <label>Question Text</label>
-        <input type="text" id="q-text" placeholder="Enter question..." style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 6px;">
+        <input type="text" id="q-text" placeholder="Enter question..."
+          style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 6px;">
       </div>
       <div id="choices-container">
         <label>Choices</label>
-        <div style="margin-bottom: 10px;"><input type="text" class="q-choice" placeholder="Choice 1" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 6px;"></div>
-        <div style="margin-bottom: 10px;"><input type="text" class="q-choice" placeholder="Choice 2" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 6px;"></div>
-        <div style="margin-bottom: 10px;"><input type="text" class="q-choice" placeholder="Choice 3" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 6px;"></div>
-        <div style="margin-bottom: 10px;"><input type="text" class="q-choice" placeholder="Choice 4" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 6px;"></div>
+        <div style="margin-bottom: 10px;"><input type="text" class="q-choice" placeholder="Choice 1"
+            style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 6px;"></div>
+        <div style="margin-bottom: 10px;"><input type="text" class="q-choice" placeholder="Choice 2"
+            style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 6px;"></div>
+        <div style="margin-bottom: 10px;"><input type="text" class="q-choice" placeholder="Choice 3"
+            style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 6px;"></div>
+        <div style="margin-bottom: 10px;"><input type="text" class="q-choice" placeholder="Choice 4"
+            style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 6px;"></div>
       </div>
       <div class="form-group">
         <label>Correct Choice Index (0-3)</label>
-        <input type="number" id="q-correct" min="0" max="3" value="0" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 6px;">
+        <input type="number" id="q-correct" min="0" max="3" value="0"
+          style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 6px;">
       </div>
       <div style="display: flex; gap: 10px;">
         <button class="btn" style="background-color: var(--success-color);" onclick="saveQuestion()">Save
@@ -1249,7 +1317,8 @@
 
   <!-- Registration Section -->
   <div id="reg-section" class="container" style="display: none;">
-    <button onclick="showPortal()" style="background:none; border:none; cursor:pointer; color: var(--primary-color); font-weight: bold; margin-bottom: 1rem;">←
+    <button onclick="showPortal()"
+      style="background:none; border:none; cursor:pointer; color: var(--primary-color); font-weight: bold; margin-bottom: 1rem;">←
       Back</button>
     <h1>Student Registration</h1>
     <div class="form-group">
@@ -1262,7 +1331,10 @@
     </div>
     <div class="form-group">
       <label for="subjectSelect">Subject</label>
-      <select id="subjectSelect" required="" style="width: 100%; padding: 0.8rem; border: 2px solid #ddd; border-radius: 6px; font-size: 1rem;"><option value="">Select a subject...</option><option value="sub_1768821277913">General Knowledge</option><option value="sub_1768821306849">Personal Development</option></select>
+      <select id="subjectSelect" required=""
+        style="width: 100%; padding: 0.8rem; border: 2px solid #ddd; border-radius: 6px; font-size: 1rem;">
+        <option value="">Select a subject...</option>
+      </select>
     </div>
     <button class="btn" onclick="startExam()">Start Exam</button>
     <p style="font-size: 0.8rem; color: #666; margin-top: 1rem; text-align: center;">
@@ -1273,7 +1345,8 @@
   <!-- Exam Section -->
   <div id="exam-section" class="container" style="display: none;">
     <div class="timer-container">Time Remaining: <span id="timer">30:00</span></div>
-    <div id="navigation-ribbon" style="display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 1.5rem; justify-content: center;">
+    <div id="navigation-ribbon"
+      style="display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 1.5rem; justify-content: center;">
       <!-- Question numbers go here -->
     </div>
     <div id="question-container">
@@ -1308,8 +1381,10 @@
     </div>
     <div style="margin-top: 2rem; border-top: 1px dashed #ccc; padding-top: 1.5rem;">
       <p style="font-size: 0.9rem; margin-bottom: 0.5rem; font-weight: bold;">Unlock Retake (Proctor Only)</p>
-      <input type="text" id="retakeUnlockCode" placeholder="Enter secret code" style="padding: 0.8rem; border: 2px solid #ddd; border-radius: 6px; width: 100%; max-width: 300px; text-align: center;">
-      <button class="btn" style="max-width: 300px; margin: 10px auto; background-color: var(--secondary-color);" onclick="attemptRetakeUnlock()">Verify &amp; Reset</button>
+      <input type="text" id="retakeUnlockCode" placeholder="Enter secret code"
+        style="padding: 0.8rem; border: 2px solid #ddd; border-radius: 6px; width: 100%; max-width: 300px; text-align: center;">
+      <button class="btn" style="max-width: 300px; margin: 10px auto; background-color: var(--secondary-color);"
+        onclick="attemptRetakeUnlock()">Verify &amp; Reset</button>
       <p id="retake-error" style="color: var(--error-color); font-size: 0.8rem; display: none;">Invalid secret
         code.</p>
     </div>
@@ -1334,6 +1409,24 @@
       Resume</button>
   </div>
 
+  <!-- Subject Password Prompt Modal -->
+  <div id="subject-password-modal" class="warning-overlay" style="background: rgba(0, 0, 0, 0.95); display: none;">
+    <div class="lock-icon">🔑</div>
+    <h2>SUBJECT PASSWORD REQUIRED</h2>
+    <p>Please enter the password for <span id="pwd-subject-name"
+        style="color: var(--accent-color); font-weight: bold;"></span></p>
+    <div style="margin-top: 2rem; width: 100%; max-width: 300px;">
+      <input type="password" id="subjectPasswordInput" placeholder="Enter password"
+        style="color: black; text-align: center; width: 100%; padding: 0.8rem; border-radius: 6px; border: none; font-size: 1.1rem;">
+      <p id="sub-pwd-error" style="color: #ff8a80; font-size: 0.9rem; margin-top: 0.5rem; display: none;">Incorrect
+        password. Please try again.</p>
+    </div>
+    <div style="display: flex; gap: 10px; margin-top: 2rem; width: 100%; max-width: 300px;">
+      <button class="btn" style="flex: 1;" onclick="verifySubjectPassword()">Verify &amp; Start</button>
+      <button class="btn" style="flex: 1; background-color: #555;" onclick="closePasswordPrompt()">Cancel</button>
+    </div>
+  </div>
+
   <script>
     /**
      * QUARTER EXAMINATION APP
@@ -1345,1744 +1438,1744 @@
 
     // Initial Subject Database Structure
     const DEFAULT_SUBJECTS = [
-  {
-    "id": "sub_1768821277913",
-    "name": "General Knowledge",
-    "status": "enabled",
-    "duration": 30,
-    "questions": [
       {
-        "id": 1,
-        "text": "What is the capital of the Philippines?",
-        "options": [
-          "Manila",
-          "Cebu",
-          "Davao",
-          "Quezon City"
-        ],
-        "answer": 0
+        "id": "sub_1768821277913",
+        "name": "General Knowledge",
+        "status": "enabled",
+        "duration": 30,
+        "questions": [
+          {
+            "id": 1,
+            "text": "What is the capital of the Philippines?",
+            "options": [
+              "Manila",
+              "Cebu",
+              "Davao",
+              "Quezon City"
+            ],
+            "answer": 0
+          },
+          {
+            "id": 2,
+            "text": "Which planet is known as the Red Planet?",
+            "options": [
+              "Earth",
+              "Mars",
+              "Jupiter",
+              "Venus"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 3,
+            "text": "What is 15 + 7?",
+            "options": [
+              "21",
+              "22",
+              "23",
+              "24"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 4,
+            "text": "Who wrote 'Noli Me Tangere'?",
+            "options": [
+              "Andres Bonifacio",
+              "Jose Rizal",
+              "Apolinario Mabini",
+              "Emilio Aguinaldo"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 5,
+            "text": "What is the largest ocean on Earth?",
+            "options": [
+              "Atlantic",
+              "Indian",
+              "Arctic",
+              "Pacific"
+            ],
+            "answer": 3
+          }
+        ]
       },
       {
-        "id": 2,
-        "text": "Which planet is known as the Red Planet?",
-        "options": [
-          "Earth",
-          "Mars",
-          "Jupiter",
-          "Venus"
-        ],
-        "answer": 1
+        "id": "sub_1768821306849",
+        "name": "Personal Development",
+        "status": "disabled",
+        "duration": 60,
+        "questions": [
+          {
+            "id": 1,
+            "text": "Which stage of development is referred to as the 'foundation age' when basic behaviors are organized?",
+            "options": [
+              "Early Childhood",
+              "Infancy",
+              "Late Childhood",
+              "Adolescence"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 2,
+            "text": "If a child speaks in 3–4 word sentences, shows defiant behavior, and imitates others, which developmental stage are they most likely in?",
+            "options": [
+              "Infancy (1 year old)",
+              "Infancy (2 years old)",
+              "Early Childhood (4 years old)",
+              "Late Childhood (8 years old)"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 3,
+            "text": "During which prenatal stage do vital organs and body systems form?",
+            "options": [
+              "Germinal stage",
+              "Embryonic stage",
+              "Fetal stage",
+              "Placental stage"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 4,
+            "text": "In Late Childhood (6–12 years), peer acceptance becomes very important. Why is parental approval still significant at this stage?",
+            "options": [
+              "Children are completely independent from parents.",
+              "Parental validation helps balance peer influence and builds security.",
+              "Children reject parental approval entirely.",
+              "Parents are the only source of social interaction."
+            ],
+            "answer": 1
+          },
+          {
+            "id": 5,
+            "text": "What is the age range for Early Adulthood?",
+            "options": [
+              "18–40 years",
+              "40–65 years",
+              "12–18 years",
+              "6–12 years"
+            ],
+            "answer": 0
+          },
+          {
+            "id": 6,
+            "text": "An adolescent is highly concerned with appearance and frequently challenges authority. What developmental need is driving this behavior?",
+            "options": [
+              "The need for financial independence",
+              "The attempt to establish self-identity",
+              "The decline in physical abilities",
+              "The focus on career planning"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 7,
+            "text": "Which stage of adolescence is marked by the completion of puberty and increased capacity for abstract thought?",
+            "options": [
+              "Early adolescence",
+              "Middle adolescence",
+              "Late adolescence",
+              "Emerging adulthood"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 8,
+            "text": "In Middle Age (40 to retirement), individuals adjust to physical changes and new concerns. Which reflects a common emotional challenge during this period?",
+            "options": [
+              "Learning to walk and talk",
+              "Fear of aging and job security",
+              "Puberty-related changes",
+              "Rapid physical growth"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 9,
+            "text": "Which of the following is considered an internal stressor?",
+            "options": [
+              "Death of a loved one",
+              "Negative self-talk",
+              "School demands",
+              "Moving to a new school"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 10,
+            "text": "Early Adulthood involves adjusting to new life patterns and roles. Which scenario best illustrates a successful adjustment in this stage?",
+            "options": [
+              "A teenager focusing on peer acceptance",
+              "A middle-aged adult worrying about retirement",
+              "A young adult learning to profit from mistakes and take responsibility",
+              "A child developing fears of the dark"
+            ],
+            "answer": 2
+          },
+          {
+            "id": 11,
+            "text": "What does personal effectiveness primarily rely on?",
+            "options": [
+              "External validation",
+              "Innate characteristics like talents and skills",
+              "Financial resources",
+              "Social media presence"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 12,
+            "text": "Older adulthood is the fastest-growing age bracket. Which strategy best addresses the emotional needs of someone in this stage?",
+            "options": [
+              "Ignoring health concerns",
+              "Focusing only on financial planning",
+              "Engaging in suitable forms of entertainment and social connection",
+              "Avoiding any discussion of aging"
+            ],
+            "answer": 2
+          },
+          {
+            "id": 13,
+            "text": "Which best describes holistic development?",
+            "options": [
+              "Focusing only on academic success",
+              "Balancing mental, physical, social, emotional, and spiritual growth",
+              "Prioritizing financial stability above all",
+              "Avoiding emotional expression"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 14,
+            "text": "If a child in Early Childhood has a vivid imagination and struggles to distinguish real from imaginary, what should a caregiver do?",
+            "options": [
+              "Discourage imaginative play entirely",
+              "Clearly explain the difference between reality and fantasy without dismissing creativity",
+              "Isolate the child from social interaction",
+              "Encourage only logical and reality-based activities"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 15,
+            "text": "In which developmental stage do individuals typically begin to value family relationships and show emotional stability?",
+            "options": [
+              "Early adolescence",
+              "Middle adolescence",
+              "Late adolescence",
+              "Early adulthood"
+            ],
+            "answer": 2
+          },
+          {
+            "id": 16,
+            "text": "Which of the following is NOT a skill that increases personal efficiency?",
+            "options": [
+              "Determination",
+              "Procrastination",
+              "Self-confidence",
+              "Creativity"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 17,
+            "text": "Which is a common social challenge during adolescence?",
+            "options": [
+              "Excessive sleep",
+              "Youth violence",
+              "Overhydration",
+              "Lack of hobbies"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 18,
+            "text": "What term refers to the differentiation between right and wrong behavior?",
+            "options": [
+              "Autonomy",
+              "Morality",
+              "Identity",
+              "Emotional stability"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 19,
+            "text": "What is a common physical symptom of anxiety?",
+            "options": [
+              "Increased appetite",
+              "Decreased heart rate",
+              "Sweating and trembling",
+              "Improved concentration"
+            ],
+            "answer": 2
+          },
+          {
+            "id": 20,
+            "text": "Which eating disorder is characterized by binge eating followed by purging?",
+            "options": [
+              "Anorexia Nervosa",
+              "Bulimia Nervosa",
+              "Bipolar Disorder",
+              "Clinical Depression"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 21,
+            "text": "Mood swings, irritability, and social withdrawal may indicate which mental health issue?",
+            "options": [
+              "Euphoria",
+              "Depression",
+              "Hyperactivity",
+              "Optimism"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 22,
+            "text": "Which is a healthy way to cope with stress?",
+            "options": [
+              "Avoiding all social interactions",
+              "Practicing abdominal breathing",
+              "Increasing caffeine intake",
+              "Suppressing emotions"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 23,
+            "text": "What is the primary focus of spiritual development during adolescence?",
+            "options": [
+              "Financial planning",
+              "Career selection",
+              "Exploring questions about existence and faith",
+              "Physical fitness"
+            ],
+            "answer": 2
+          },
+          {
+            "id": 24,
+            "text": "Which stage of human development is called the 'gang and creativity age'?",
+            "options": [
+              "Infancy",
+              "Early childhood",
+              "Late childhood",
+              "Adolescence"
+            ],
+            "answer": 2
+          },
+          {
+            "id": 25,
+            "text": "What does 'identity' refer to in adolescent development?",
+            "options": [
+              "Physical appearance",
+              "Set of qualities and beliefs that differentiate a person",
+              "Academic performance",
+              "Family background"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 26,
+            "text": "Which is an example of an emotional symptom of stress?",
+            "options": [
+              "Improved sleep",
+              "Feeling overwhelmed",
+              "Increased energy",
+              "Clear thinking"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 27,
+            "text": "What is a key characteristic of middle adolescence?",
+            "options": [
+              "Complete physical maturity",
+              "Strong interest in romantic relationships",
+              "Lack of peer influence",
+              "Disinterest in future planning"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 28,
+            "text": "Which skill helps an individual stay focused on goals without distraction?",
+            "options": [
+              "Creativity",
+              "Persistence",
+              "Stress management",
+              "Self-confidence"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 29,
+            "text": "What does the 'fight' response to stress typically involve?",
+            "options": [
+              "Feelings of numbness",
+              "Restless legs",
+              "Aggressiveness and anger",
+              "Social withdrawal"
+            ],
+            "answer": 2
+          },
+          {
+            "id": 30,
+            "text": "Which is NOT a component of personal effectiveness?",
+            "options": [
+              "Time management",
+              "Talent identification",
+              "Ignoring feedback",
+              "Skill development"
+            ],
+            "answer": 2
+          },
+          {
+            "id": 31,
+            "text": "How is social health related to personal development?",
+            "options": [
+              "It is only about having many friends.",
+              "It involves communication, compromise, and cooperation.",
+              "It focuses solely on family relationships.",
+              "It ignores emotional connections."
+            ],
+            "answer": 1
+          },
+          {
+            "id": 32,
+            "text": "Which developmental task is associated with late adolescence?",
+            "options": [
+              "Beginning to walk and talk",
+              "Preparing for adult roles",
+              "Learning to share toys",
+              "Retiring from work"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 33,
+            "text": "What is a common cognitive problem during adolescence?",
+            "options": [
+              "Improved memory",
+              "Inability to concentrate",
+              "Enhanced judgment",
+              "Increased creativity"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 34,
+            "text": "Which of the following is a positive emotion?",
+            "options": [
+              "Jealousy",
+              "Relief",
+              "Annoyance",
+              "Fear"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 35,
+            "text": "What is the primary purpose of the abdominal breathing technique?",
+            "options": [
+              "To increase stress",
+              "To improve digestion",
+              "To promote relaxation",
+              "To enhance physical strength"
+            ],
+            "answer": 2
+          },
+          {
+            "id": 36,
+            "text": "Which statement best describes 'stress as relational'?",
+            "options": [
+              "Stress is only a physical response.",
+              "Stress arises from the interaction between a person and their environment.",
+              "Stress is always harmful.",
+              "Stress is unrelated to emotions."
+            ],
+            "answer": 1
+          },
+          {
+            "id": 37,
+            "text": "What distinguishes internal stressors from external stressors?",
+            "options": [
+              "Internal stressors come from outside events; external from thoughts.",
+              "Internal stressors originate from personal thoughts; external from outside situations.",
+              "Both are caused by genetic factors.",
+              "Neither affects emotional well-being."
+            ],
+            "answer": 1
+          },
+          {
+            "id": 38,
+            "text": "Which indicates healthy adolescent development?",
+            "options": [
+              "Complete dependence on parents",
+              "Ability to plan for long-term goals",
+              "Avoidance of all risks",
+              "Lack of peer interaction"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 39,
+            "text": "What is the major developmental focus during the embryonic stage?",
+            "options": [
+              "Formation of vital organs",
+              "Development of social skills",
+              "Learning language",
+              "Building career plans"
+            ],
+            "answer": 0
+          },
+          {
+            "id": 40,
+            "text": "Which is a common family-related challenge in middle adolescence?",
+            "options": [
+              "Lack of interest in peer opinions",
+              "Increased dependency on parents",
+              "Arguments over rules and independence",
+              "Complete agreement with parental views"
+            ],
+            "answer": 2
+          },
+          {
+            "id": 41,
+            "text": "How does creativity contribute to personal effectiveness?",
+            "options": [
+              "It limits problem-solving options.",
+              "It allows for unconventional solutions.",
+              "It reduces emotional expression.",
+              "It discourages innovation."
+            ],
+            "answer": 1
+          },
+          {
+            "id": 42,
+            "text": "Which is a symptom of depression in men?",
+            "options": [
+              "Increased social engagement",
+              "Reduced sexual desire",
+              "Excessive happiness",
+              "Lack of anger"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 43,
+            "text": "What is a key element of autonomy in late adolescence?",
+            "options": [
+              "Total reliance on peers",
+              "Financial dependence on parents",
+              "Emancipation and vocational planning",
+              "Avoidance of all responsibilities"
+            ],
+            "answer": 2
+          },
+          {
+            "id": 44,
+            "text": "How is 'mental health' best defined?",
+            "options": [
+              "Absence of mental illness",
+              "State of well-being where one can cope with life's stresses",
+              "Constant happiness",
+              "Lack of emotional expression"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 45,
+            "text": "What is a common physical change during middle age?",
+            "options": [
+              "Improved eyesight",
+              "Hair thinning and graying",
+              "Increased muscle tone",
+              "Enhanced hearing"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 46,
+            "text": "Which is a social challenge related to adolescent reproductive health?",
+            "options": [
+              "Excessive exercise",
+              "Lack of access to appropriate healthcare",
+              "Overeating",
+              "Too much sleep"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 47,
+            "text": "What is the goal of 'zero navigation' when studying?",
+            "options": [
+              "To multitask efficiently",
+              "To minimize distractions",
+              "To increase social interaction",
+              "To delay task completion"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 48,
+            "text": "Which is a characteristic of early adolescence?",
+            "options": [
+              "Strong interest in long-term planning",
+              "High level of emotional stability",
+              "Curiosity about bodily changes",
+              "Complete independence from parents"
+            ],
+            "answer": 2
+          },
+          {
+            "id": 49,
+            "text": "How do peer relationships contribute to adolescent development?",
+            "options": [
+              "They prevent identity formation.",
+              "They encourage dependency on parents.",
+              "They foster independence and personal identity.",
+              "They eliminate the need for family support."
+            ],
+            "answer": 2
+          },
+          {
+            "id": 50,
+            "text": "Which risk behavior is common in middle adolescence?",
+            "options": [
+              "Avoiding new experiences",
+              "Excessive caution in decision-making",
+              "Experimentation with substances",
+              "Complete reliance on authority figures"
+            ],
+            "answer": 2
+          }
+        ]
       },
       {
-        "id": 3,
-        "text": "What is 15 + 7?",
-        "options": [
-          "21",
-          "22",
-          "23",
-          "24"
-        ],
-        "answer": 1
+        "id": "sub_1768825675494",
+        "name": "Practical Research I",
+        "status": "disabled",
+        "duration": 60,
+        "questions": [
+          {
+            "id": 1,
+            "text": "Which of the following correctly defines 'inquiry' in research?",
+            "options": [
+              "A process of validating existing theories without questioning",
+              "A learning process that motivates one to obtain knowledge by asking questions",
+              "A method of gathering numerical data only",
+              "The final step in writing a research paper"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 2,
+            "text": "What is the main purpose of a 'Narrative Hook' in the Background of the Study?",
+            "options": [
+              "To present the methodology",
+              "To list the research questions",
+              "To draw the reader into the study",
+              "To state the scope and delimitations"
+            ],
+            "answer": 2
+          },
+          {
+            "id": 3,
+            "text": "Which research type aims to apply findings to societal problems or issues?",
+            "options": [
+              "Pure Research",
+              "Exploratory Research",
+              "Applied Research",
+              "Descriptive Research"
+            ],
+            "answer": 2
+          },
+          {
+            "id": 4,
+            "text": "What is the correct order of sections in Chapter 1 of a research paper?",
+            "options": [
+              "Significance, Background, Statement of the Problem, Scope",
+              "Background, Statement of the Problem, Significance, Scope",
+              "Scope, Background, Significance, Statement of the Problem",
+              "Background, Scope, Significance, Statement of the Problem"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 5,
+            "text": "Which of the following is a characteristic of Qualitative Research?",
+            "options": [
+              "Uses only numerical data",
+              "Requires controlled variables",
+              "Abounds with words and visuals",
+              "Avoids human interpretation"
+            ],
+            "answer": 2
+          },
+          {
+            "id": 6,
+            "text": "What does 'Scope and Delimitation' of a study primarily define?",
+            "options": [
+              "The theoretical framework",
+              "The boundaries and weaknesses of the study",
+              "The data analysis procedure",
+              "The list of references"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 7,
+            "text": "In research, what is a 'Purpose Statement'?",
+            "options": [
+              "A broad subject matter",
+              "The major intent or objective of the study",
+              "A list of variables",
+              "The final conclusion"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 8,
+            "text": "Which of the following is an example of a Secondary Data source?",
+            "options": [
+              "Personal interviews",
+              "Survey results",
+              "Government publications",
+              "Laboratory experiments"
+            ],
+            "answer": 2
+          },
+          {
+            "id": 9,
+            "text": "What is the main goal of Ethnography as a qualitative research type?",
+            "options": [
+              "To examine historical documents",
+              "To study a particular cultural group's lifestyle",
+              "To measure numerical relationships",
+              "To test a new theory"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 10,
+            "text": "Which term refers to the 'general educational issue or concern addressed in research'?",
+            "options": [
+              "Research Question",
+              "Purpose Statement",
+              "Research Problem",
+              "Topic"
+            ],
+            "answer": 2
+          },
+          {
+            "id": 11,
+            "text": "What is a key guideline in framing a research title?",
+            "options": [
+              "It must be more than 20 words",
+              "It must explicitly state the research design",
+              "It must list key variables",
+              "It must include the researcher's name"
+            ],
+            "answer": 2
+          },
+          {
+            "id": 12,
+            "text": "Which approach combines scientific and naturalistic methods?",
+            "options": [
+              "Pure Approach",
+              "Triangulation Approach",
+              "Positive Approach",
+              "Deductive Approach"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 13,
+            "text": "Which section of the research paper states who will benefit from the study?",
+            "options": [
+              "Background of the Study",
+              "Statement of the Problem",
+              "Significance of the Study",
+              "Scope and Delimitation"
+            ],
+            "answer": 2
+          },
+          {
+            "id": 14,
+            "text": "What type of research 'defines or gives a portrayal of a person, thing, or event'?",
+            "options": [
+              "Correlational",
+              "Explanatory",
+              "Descriptive",
+              "Action"
+            ],
+            "answer": 2
+          },
+          {
+            "id": 15,
+            "text": "Which of the following is NOT a good source of researchable problems?",
+            "options": [
+              "Personal fantasies without evidence",
+              "Previous research recommendations",
+              "National trends",
+              "Real-life student issues"
+            ],
+            "answer": 0
+          },
+          {
+            "id": 16,
+            "text": "A study aims to determine the relationship between sleep duration and academic performance of SHS students. Which research type is most appropriate?",
+            "options": [
+              "Descriptive",
+              "Correlational",
+              "Historical",
+              "Phenomenology"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 17,
+            "text": "Which research title is most appropriately framed according to the standards discussed?",
+            "options": [
+              "'A Study on Social Media'",
+              "'The Effect of Facebook Usage on Attention Span of Grade 11 Students'",
+              "'How Social Media is Bad for Students: A Qualitative Inquiry'",
+              "'An Investigation into the Relationship Between Two Variables'"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 18,
+            "text": "In a study on 'Math Anxiety and Problem-Solving Skills,' which part of Chapter 1 would explain why past studies show conflicting results?",
+            "options": [
+              "Significance of the Study",
+              "Background of the Study",
+              "Statement of the Problem",
+              "Scope and Delimitation"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 19,
+            "text": "A researcher writes: 'This study aims to explore the lived experiences of teenage mothers.' Which qualitative research type is this?",
+            "options": [
+              "Case Study",
+              "Ethnography",
+              "Phenomenology",
+              "Grounded Theory"
+            ],
+            "answer": 2
+          },
+          {
+            "id": 20,
+            "text": "Which of the following is the BEST example of a Research Question derived from the Purpose Statement: 'To identify factors affecting low grades in Mathematics'?",
+            "options": [
+              "What is Mathematics?",
+              "How many students fail Math?",
+              "What are the factors affecting low grades in Mathematics among SHS students?",
+              "Why do students dislike Math?"
+            ],
+            "answer": 2
+          },
+          {
+            "id": 21,
+            "text": "If a study uses both surveys and interviews to examine bullying, which research approach is being used?",
+            "options": [
+              "Scientific Approach",
+              "Naturalistic Approach",
+              "Triangulation Approach",
+              "Pure Approach"
+            ],
+            "answer": 2
+          },
+          {
+            "id": 22,
+            "text": "Which of the following topics is MOST appropriate for a qualitative case study?",
+            "options": [
+              "The GDP of the Philippines from 2000-2020",
+              "Coping Mechanisms of a Student with Dyslexia",
+              "The Effect of Light on Plant Growth",
+              "A Nationwide Survey on Voting Preferences"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 23,
+            "text": "What is the main weakness of a study that uses only self-reported questionnaires for data on social media addiction?",
+            "options": [
+              "Too broad scope",
+              "Possible subjectivity and reliability issues",
+              "Lack of literature support",
+              "Too few respondents"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 24,
+            "text": "Which Statement of the Problem is correctly phrased?",
+            "options": [
+              "'This study aims to prove that social media is harmful.'",
+              "'This study generally aims to determine the relationship between study habits and grades.'",
+              "'This study will answer everything about learning.'",
+              "'This study seeks to find out if students are happy.'"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 25,
+            "text": "Given the topic 'Online Learning Fatigue,' which Background of the Study opening is the strongest Narrative Hook?",
+            "options": [
+              "'Online learning is a method of education.'",
+              "'According to DepEd, 80% of students reported mental exhaustion after online classes.'",
+              "'This study is about online learning.'",
+              "'Many students use computers.'"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 26,
+            "text": "A study on 'Leadership Styles in Student Organizations' uses interviews, observations, and document review. Which qualitative research type does this resemble?",
+            "options": [
+              "Historical Analysis",
+              "Content Analysis",
+              "Case Study",
+              "Grounded Theory"
+            ],
+            "answer": 2
+          },
+          {
+            "id": 27,
+            "text": "Which of the following is a delimitation?",
+            "options": [
+              "The study is conducted at DLSAU.",
+              "The study uses random sampling.",
+              "The study does not include junior high school students.",
+              "The study aims to improve teaching strategies."
+            ],
+            "answer": 2
+          },
+          {
+            "id": 28,
+            "text": "What is the primary difference between 'Topic' and 'Research Problem'?",
+            "options": [
+              "Topic is specific, Research Problem is broad",
+              "Topic is broad, Research Problem narrows the topic into an issue",
+              "Topic is a question, Research Problem is an answer",
+              "There is no difference"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 29,
+            "text": "Which of the following Significance of the Study statements is MOST specific?",
+            "options": [
+              "'This study will help everyone.'",
+              "'Teachers may use the findings to design attention-focused activities.'",
+              "'The study is significant.'",
+              "'It will contribute to knowledge.'"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 30,
+            "text": "If a researcher wants to develop a new theory about student motivation during the pandemic, which qualitative type is best?",
+            "options": [
+              "Ethnography",
+              "Grounded Theory",
+              "Phenomenology",
+              "Historical Analysis"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 31,
+            "text": "Why is 'Triangulation Approach' considered advantageous?",
+            "options": [
+              "It uses only one data source",
+              "It allows viewing the research from multiple perspectives",
+              "It is the easiest approach",
+              "It avoids human subjectivity"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 32,
+            "text": "Which of the following is a researchable topic?",
+            "options": [
+              "The beauty of sunsets",
+              "The effectiveness of a new teaching method on student engagement",
+              "Why aliens exist",
+              "My personal opinion about movies"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 33,
+            "text": "In Grounded Theory, when does the theory emerge?",
+            "options": [
+              "Before data collection",
+              "During data collection and analysis",
+              "After writing the conclusion",
+              "It is borrowed from past studies"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 34,
+            "text": "Which is a limitation in a qualitative study?",
+            "options": [
+              "The sample size is small",
+              "The topic is timely",
+              "The respondents are cooperative",
+              "The data is plentiful"
+            ],
+            "answer": 0
+          },
+          {
+            "id": 35,
+            "text": "Based on the Purpose Statement 'To examine the impact of parental involvement on academic performance,' which research question is correctly formulated?",
+            "options": [
+              "What is academic performance?",
+              "How does parental involvement affect the academic performance of Grade 12 students?",
+              "Are parents important?",
+              "How many parents are involved?"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 36,
+            "text": "What is the main advantage of qualitative research in social settings?",
+            "options": [
+              "It provides statistical generalizability",
+              "It promotes deep understanding of human behavior in natural contexts",
+              "It is quick to conduct",
+              "It avoids subjectivity completely"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 37,
+            "text": "Which section of the paper would address 'Why is there a need to study this problem now?'",
+            "options": [
+              "Scope",
+              "Background",
+              "Significance",
+              "Title"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 38,
+            "text": "A study that examines language use in political speeches is an example of:",
+            "options": [
+              "Historical Analysis",
+              "Discourse Analysis",
+              "Case Study",
+              "Ethnography"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 39,
+            "text": "Which of the following is a good example of a 'clear need for research' narrative hook?",
+            "options": [
+              "'Education is important.'",
+              "'Many students use Facebook.'",
+              "'School dropout rates have increased by 20% in the last five years.'",
+              "'This study is interesting.'"
+            ],
+            "answer": 2
+          },
+          {
+            "id": 40,
+            "text": "From the Research Problem 'Low interest in Science among SHS students,' which is the best research title?",
+            "options": [
+              "'Science Education'",
+              "'Factors Affecting Low Interest in Science Among Senior High School Students'",
+              "'A Research Study'",
+              "'Why Students Hate Science'"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 41,
+            "text": "Which type of data is collected through direct observation or interaction?",
+            "options": [
+              "Secondary data",
+              "Primary data",
+              "Historical data",
+              "Published data"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 42,
+            "text": "If a study's background cites conflicting findings from previous studies, what is it establishing?",
+            "options": [
+              "Scope",
+              "Research Gap",
+              "Methodology",
+              "Data analysis"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 43,
+            "text": "In John Dewey's theory, what is essential for inquiry?",
+            "options": [
+              "Isolated thinking",
+              "Connected experiences",
+              "Memorization",
+              "Standardized testing"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 44,
+            "text": "Which of the following topics is TOO BROAD for a student research?",
+            "options": [
+              "'The History of the World'",
+              "'Reading Habits of Grade 11 STEM Students at DLSAU'",
+              "'Social Media Use and Attention Span in One Class'",
+              "'Coping Strategies of Public School Teachers in Manila'"
+            ],
+            "answer": 0
+          },
+          {
+            "id": 45,
+            "text": "For a study on 'Bullying in SHS,' which is the best example of a specific beneficiary in the Significance section?",
+            "options": [
+              "'All people'",
+              "'School counselors may use findings to design anti-bullying programs'",
+              "'It will be significant'",
+              "'Future researchers'"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 46,
+            "text": "What is the main difference between Pure and Applied Research?",
+            "options": [
+              "Pure Research is practical, Applied is theoretical",
+              "Pure Research increases knowledge, Applied solves societal problems",
+              "Pure Research uses numbers, Applied uses words",
+              "There is no difference"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 47,
+            "text": "Which of the following is NOT a characteristic of research?",
+            "options": [
+              "Accuracy",
+              "Bias",
+              "Objectiveness",
+              "Systematic process"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 48,
+            "text": "Why is 'Availability of Information' important in choosing a research topic?",
+            "options": [
+              "It makes the research easier to complete",
+              "It ensures there are sources to support the study",
+              "It guarantees publication",
+              "It avoids primary data collection"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 49,
+            "text": "Which of the following is a strength of qualitative research?",
+            "options": [
+              "It is highly objective",
+              "It allows statistical generalization",
+              "It promotes deep contextual understanding",
+              "It is quick to analyze"
+            ],
+            "answer": 2
+          },
+          {
+            "id": 50,
+            "text": "Given the Research Question 'How do SHS students perceive online learning?' which qualitative research type is most suitable?",
+            "options": [
+              "Historical Analysis",
+              "Phenomenology",
+              "Content Analysis",
+              "Correlational Research"
+            ],
+            "answer": 1
+          }
+        ]
       },
       {
-        "id": 4,
-        "text": "Who wrote 'Noli Me Tangere'?",
-        "options": [
-          "Andres Bonifacio",
-          "Jose Rizal",
-          "Apolinario Mabini",
-          "Emilio Aguinaldo"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 5,
-        "text": "What is the largest ocean on Earth?",
-        "options": [
-          "Atlantic",
-          "Indian",
-          "Arctic",
-          "Pacific"
-        ],
-        "answer": 3
+        "id": "sub_1768829089450",
+        "name": "H.O.P.E. 4",
+        "status": "disabled",
+        "duration": 60,
+        "questions": [
+          {
+            "id": 1,
+            "text": "What is the primary purpose of a tent?",
+            "options": [
+              "To store food away from animals",
+              "To provide portable shelter during outdoor activities",
+              "To mark camping territory",
+              "To serve as a cooking area"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 2,
+            "text": "Which tent type would be most suitable for a solo hiker concerned about weight and stealth camping?",
+            "options": [
+              "Ridge Tent",
+              "Dome Tent",
+              "Bivy Tent",
+              "Tunnel Tent"
+            ],
+            "answer": 2
+          },
+          {
+            "id": 3,
+            "text": "A family of five plans a car camping trip in rainy weather. Which tent should they avoid?",
+            "options": [
+              "Geodesic Tent",
+              "Tunnel Tent",
+              "Dome Tent (large size)",
+              "Ridge Tent"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 4,
+            "text": "What is a common disadvantage of Ridge/A-Frame Tents?",
+            "options": [
+              "Too spacious",
+              "Poor rain resistance",
+              "Lack of headroom",
+              "Difficult to pack"
+            ],
+            "answer": 2
+          },
+          {
+            "id": 5,
+            "text": "If you are camping in an area with strong winds, which tent design would provide the best stability due to its pole structure?",
+            "options": [
+              "Dome Tent",
+              "Geodesic Tent",
+              "Tunnel Tent",
+              "Bivy Tent"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 6,
+            "text": "Why are Dome Tents considered unstable in larger sizes?",
+            "options": [
+              "They use too many poles",
+              "Their curved structure spreads tension unevenly",
+              "They lack guy lines",
+              "They are made of heavy material"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 7,
+            "text": "What is the correct first step in pitching a tent?",
+            "options": [
+              "Hammer in tent pegs",
+              "Lay down an earth pad",
+              "Unpack tent supplies",
+              "Insert poles through the frame"
+            ],
+            "answer": 2
+          },
+          {
+            "id": 8,
+            "text": "You have to camp on soft, sandy ground. Which step in tent pitching should be modified?",
+            "options": [
+              "Use longer tent pegs or anchors",
+              "Skip the rain fly",
+              "Insert poles after raising tent",
+              "Omit earth pad"
+            ],
+            "answer": 0
+          },
+          {
+            "id": 9,
+            "text": "Which feature is NOT typically desirable in a Bivy Tent?",
+            "options": [
+              "Lightweight",
+              "Large porch area",
+              "Built-in bug net",
+              "Good ventilation"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 10,
+            "text": "Which tent type is described as 'essentially a dome tent but with more poles'?",
+            "options": [
+              "Tunnel Tent",
+              "Geodesic Tent",
+              "Ridge Tent",
+              "Bivy Tent"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 11,
+            "text": "Which knot is known as a stopper knot and is used in sailing and climbing?",
+            "options": [
+              "Sheet Bend",
+              "Figure-of-Eight Knot",
+              "Square Knot",
+              "Slip Knot"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 12,
+            "text": "You need to join two ropes of different thicknesses securely. Which knot is most appropriate?",
+            "options": [
+              "Overhand Knot",
+              "Square Knot",
+              "Sheet Bend",
+              "Half Hitch"
+            ],
+            "answer": 2
+          },
+          {
+            "id": 13,
+            "text": "Why is a Slip Knot not recommended for securing heavy loads?",
+            "options": [
+              "It is difficult to tie",
+              "It tightens permanently",
+              "It can loosen when the standing end is pulled",
+              "It only works with synthetic rope"
+            ],
+            "answer": 2
+          },
+          {
+            "id": 14,
+            "text": "The Square Knot is also known as:",
+            "options": [
+              "Reef Knot",
+              "Hangman's Knot",
+              "Bowline",
+              "Fisherman's Knot"
+            ],
+            "answer": 0
+          },
+          {
+            "id": 15,
+            "text": "In a survival scenario, which knot would be best for setting up a temporary shelter using a tarp and tree?",
+            "options": [
+              "Noose Knot",
+              "Figure-of-Eight",
+              "Overhand Knot",
+              "Slip Knot with adjustable loop"
+            ],
+            "answer": 3
+          },
+          {
+            "id": 16,
+            "text": "Design a scenario where a Noose Knot is used ethically in camping.",
+            "options": [
+              "Securing food bags from animals",
+              "First-aid splint tying",
+              "Climbing harness backup",
+              "Hanging a lantern from a branch"
+            ],
+            "answer": 3
+          },
+          {
+            "id": 17,
+            "text": "What is the main function of a 'stopper knot'?",
+            "options": [
+              "To join two ropes",
+              "To prevent rope ends from fraying",
+              "To create a loop",
+              "To stop a rope from slipping through a hole"
+            ],
+            "answer": 3
+          },
+          {
+            "id": 18,
+            "text": "Which knot becomes tighter under load but can be easily loosened?",
+            "options": [
+              "Square Knot",
+              "Sheet Bend",
+              "Noose Knot",
+              "Overhand Knot"
+            ],
+            "answer": 2
+          },
+          {
+            "id": 19,
+            "text": "If you need to quickly tie a knot that can be released with one pull, which do you choose?",
+            "options": [
+              "Figure-of-Eight",
+              "Slip Knot",
+              "Square Knot",
+              "Half Hitch"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 20,
+            "text": "The ______ is a bend knot used to join two ropes of different diameters.",
+            "options": [
+              "Overhand Knot",
+              "Square Knot",
+              "Sheet Bend",
+              "Half Hitch"
+            ],
+            "answer": 2
+          },
+          {
+            "id": 21,
+            "text": "Outdoor recreation is defined as an activity done during ______ for personal reasons.",
+            "options": [
+              "Work time",
+              "Subsistence time",
+              "Free time",
+              "Existence time"
+            ],
+            "answer": 2
+          },
+          {
+            "id": 22,
+            "text": "Why is free time essential for outdoor recreation according to Clayne R. Jensen?",
+            "options": [
+              "It is the only time when people are not tired",
+              "It is the period after existence and subsistence time",
+              "It is mandated by law",
+              "It is when weather is best"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 23,
+            "text": "Which of the following is NOT a benefit of outdoor recreation?",
+            "options": [
+              "Spiritual benefits",
+              "Economic dependency",
+              "Social benefits",
+              "Physical health benefits"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 24,
+            "text": "The Philippines has the ______ longest coastline in the world.",
+            "options": [
+              "Third",
+              "Fifth",
+              "Seventh",
+              "Tenth"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 25,
+            "text": "You want an outdoor activity that combines land and water. Which do you choose?",
+            "options": [
+              "Parasailing",
+              "Canyoneering",
+              "Bird-watching",
+              "Rock climbing"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 26,
+            "text": "Why might mountain trekking be classified under Trail Class 3?",
+            "options": [
+              "It requires scrambling using hands for balance",
+              "It is a simple stroll",
+              "It needs artificial climbing methods",
+              "It is only for experts with ropes"
+            ],
+            "answer": 0
+          },
+          {
+            "id": 27,
+            "text": "What does 'Masl' stand for in mountain descriptions?",
+            "options": [
+              "Meters above sea level",
+              "Mountain ascent level",
+              "Maximum altitude slope limit",
+              "Measured altitude slope"
+            ],
+            "answer": 0
+          },
+          {
+            "id": 28,
+            "text": "Based on difficulty ratings, which mountain would be the hardest for a beginner?",
+            "options": [
+              "Mt. Pulag via Ambangeg (5/9)",
+              "Mt. Apo via Kidapawan (7/9)",
+              "Mt. Maculot (2/9)",
+              "Mt. Batulao (3/9)"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 29,
+            "text": "Plan a 3-day trip for a group wanting moderate difficulty and beach access.",
+            "options": [
+              "Mt. Pulag + Baguio",
+              "Mt. Daguldul + Batangas beach",
+              "Mt. Kanla-on + Bacolod",
+              "Mt. Ugo + Benguet rice terraces"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 30,
+            "text": "Which mountain is known as the 'playground of the gods'?",
+            "options": [
+              "Mt. Apo",
+              "Mt. Pulag",
+              "Mt. Pinatubo",
+              "Mt. Guiting-Guiting"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 31,
+            "text": "Why is Mt. Pinatubo's height now 1,486 meters instead of 1,745 meters?",
+            "options": [
+              "Erosion",
+              "Volcanic eruption destroyed the summit",
+              "Measurement error",
+              "Landslide"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 32,
+            "text": "What makes Mt. Kitanglad Range ecologically significant?",
+            "options": [
+              "It has the tallest peak in Luzon",
+              "It contains virgin forests and high biodiversity",
+              "It is the most active volcano",
+              "It is the easiest to climb"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 33,
+            "text": "Who said, 'It is not the mountain we conquer, but ourselves'?",
+            "options": [
+              "Anijolette Dorado",
+              "Sir Edmund Hillary",
+              "Clayne R. Jensen",
+              "CNN Travel"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 34,
+            "text": "If you want to see a 'saw-toothed' mountain ridge, where should you go?",
+            "options": [
+              "Romblon",
+              "Cavite",
+              "Zambales",
+              "Benguet"
+            ],
+            "answer": 0
+          },
+          {
+            "id": 35,
+            "text": "What is the main reason people engage in outdoor recreation?",
+            "options": [
+              "To earn money",
+              "For personal satisfaction and enjoyment",
+              "To avoid work",
+              "To follow trends"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 36,
+            "text": "You are leading a group of 8 on a camping trip in a windy, rainy area. Which combination of tents is safest?",
+            "options": [
+              "Two large Dome tents",
+              "One Tunnel tent and one Geodesic tent",
+              "Three Ridge tents",
+              "Multiple Bivy tents"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 37,
+            "text": "A camper used a Square Knot to join climbing ropes, but it failed. Why?",
+            "options": [
+              "Square Knots slip under load",
+              "Square Knots are only for first aid",
+              "Square Knots require ropes of different sizes",
+              "Square Knots are only for decorative purposes"
+            ],
+            "answer": 0
+          },
+          {
+            "id": 38,
+            "text": "Design a knot system for securing a rain fly in strong wind using two trees and a rope.",
+            "options": [
+              "Two Half Hitches + Sheet Bend",
+              "Figure-of-Eight loop + Slip Knot adjustment",
+              "Square Knot + Overhand backup",
+              "Noose Knot + Slip Knot release"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 39,
+            "text": "Why is Mt. Guiting-Guiting considered very hard despite not being the tallest?",
+            "options": [
+              "Steep 87° slopes and tricky summits",
+              "Lack of trails",
+              "Active volcanic activity",
+              "Extreme cold"
+            ],
+            "answer": 0
+          },
+          {
+            "id": 40,
+            "text": "Which mountain would be best for a beginner who wants a manageable climb with a scenic view?",
+            "options": [
+              "Mt. Apo",
+              "Mt. Pulag",
+              "Mt. Pico de Loro",
+              "Mt. Kanla-on"
+            ],
+            "answer": 2
+          },
+          {
+            "id": 41,
+            "text": "You need to set up a tent on rocky ground where pegs cannot be hammered. What do you do?",
+            "options": [
+              "Use rocks to anchor guy lines",
+              "Skip pegs entirely",
+              "Lay tent flat without raising",
+              "Only set up rain fly"
+            ],
+            "answer": 0
+          },
+          {
+            "id": 42,
+            "text": "Propose a 2-day outdoor recreation itinerary for someone visiting Siargao who isn't a surfer.",
+            "options": [
+              "Cloud Nine viewing + island hopping + trekking",
+              "Only beach lounging",
+              "Mountain biking + caving",
+              "Skydiving + parasailing"
+            ],
+            "answer": 0
+          },
+          {
+            "id": 43,
+            "text": "Which statement about outdoor recreation is FALSE?",
+            "options": [
+              "It must be done in natural environments only",
+              "It can have economic benefits",
+              "It contributes to psycho-emotional health",
+              "It is done during free time"
+            ],
+            "answer": 0
+          },
+          {
+            "id": 44,
+            "text": "What is the ecological risk of promoting mountaineering in biodiverse areas like Mt. Kitanglad?",
+            "options": [
+              "Increased trail erosion and wildlife disturbance",
+              "Decreased tourism revenue",
+              "Reduced need for guides",
+              "Improved local infrastructure only"
+            ],
+            "answer": 0
+          },
+          {
+            "id": 45,
+            "text": "Develop a Leave No Trace camping guideline using tent pitching and knot tying principles.",
+            "options": [
+              "Use biodegradable pegs, avoid cutting live branches for knots",
+              "Leave ropes tied to trees for next campers",
+              "Bury tent pegs after use",
+              "Use only Square Knots for easy removal"
+            ],
+            "answer": 0
+          },
+          {
+            "id": 46,
+            "text": "Why is the story of Anijolette 'Babeyboo' Dorado significant in outdoor recreation?",
+            "options": [
+              "Shows age is not a barrier to outdoor engagement",
+              "Promotes competitive climbing",
+              "Highlights the dangers of hiking with children",
+              "Encourages professional mountaineering only"
+            ],
+            "answer": 0
+          },
+          {
+            "id": 47,
+            "text": "If you are camping near a river and expect heavy rain, which tent type should you prioritize?",
+            "options": [
+              "Dome tent with good ventilation",
+              "Ridge tent with steep roof",
+              "Tunnel tent with large vestibule",
+              "Geodesic tent with high waterproof rating"
+            ],
+            "answer": 1
+          },
+          {
+            "id": 48,
+            "text": "In knot tying, why is the Figure-of-Eight preferred over the Overhand Knot for climbing?",
+            "options": [
+              "It is stronger and easier to untie after loading",
+              "It is quicker to tie",
+              "It uses less rope",
+              "It is more decorative"
+            ],
+            "answer": 0
+          },
+          {
+            "id": 49,
+            "text": "Imagine a scenario where you must secure a food bag from animals using a rope and tree. Which knot combination is safest?",
+            "options": [
+              "Slip Knot + Half Hitch",
+              "Noose Knot + Sheet Bend",
+              "Figure-of-Eight loop + carabiner",
+              "Square Knot + Overhand backup"
+            ],
+            "answer": 2
+          },
+          {
+            "id": 50,
+            "text": "Which mountain's history includes both wartime significance and natural oasis features?",
+            "options": [
+              "Mt. Mariveles - Tarak Ridge",
+              "Mt. Pulag",
+              "Mt. Kanla-on",
+              "Mt. Pinatubo"
+            ],
+            "answer": 0
+          }
+        ]
       }
-    ]
-  },
-  {
-    "id": "sub_1768821306849",
-    "name": "Personal Development",
-    "status": "disabled",
-    "duration": 60,
-    "questions": [
-      {
-        "id": 1,
-        "text": "Which stage of development is referred to as the 'foundation age' when basic behaviors are organized?",
-        "options": [
-          "Early Childhood",
-          "Infancy",
-          "Late Childhood",
-          "Adolescence"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 2,
-        "text": "If a child speaks in 3–4 word sentences, shows defiant behavior, and imitates others, which developmental stage are they most likely in?",
-        "options": [
-          "Infancy (1 year old)",
-          "Infancy (2 years old)",
-          "Early Childhood (4 years old)",
-          "Late Childhood (8 years old)"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 3,
-        "text": "During which prenatal stage do vital organs and body systems form?",
-        "options": [
-          "Germinal stage",
-          "Embryonic stage",
-          "Fetal stage",
-          "Placental stage"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 4,
-        "text": "In Late Childhood (6–12 years), peer acceptance becomes very important. Why is parental approval still significant at this stage?",
-        "options": [
-          "Children are completely independent from parents.",
-          "Parental validation helps balance peer influence and builds security.",
-          "Children reject parental approval entirely.",
-          "Parents are the only source of social interaction."
-        ],
-        "answer": 1
-      },
-      {
-        "id": 5,
-        "text": "What is the age range for Early Adulthood?",
-        "options": [
-          "18–40 years",
-          "40–65 years",
-          "12–18 years",
-          "6–12 years"
-        ],
-        "answer": 0
-      },
-      {
-        "id": 6,
-        "text": "An adolescent is highly concerned with appearance and frequently challenges authority. What developmental need is driving this behavior?",
-        "options": [
-          "The need for financial independence",
-          "The attempt to establish self-identity",
-          "The decline in physical abilities",
-          "The focus on career planning"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 7,
-        "text": "Which stage of adolescence is marked by the completion of puberty and increased capacity for abstract thought?",
-        "options": [
-          "Early adolescence",
-          "Middle adolescence",
-          "Late adolescence",
-          "Emerging adulthood"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 8,
-        "text": "In Middle Age (40 to retirement), individuals adjust to physical changes and new concerns. Which reflects a common emotional challenge during this period?",
-        "options": [
-          "Learning to walk and talk",
-          "Fear of aging and job security",
-          "Puberty-related changes",
-          "Rapid physical growth"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 9,
-        "text": "Which of the following is considered an internal stressor?",
-        "options": [
-          "Death of a loved one",
-          "Negative self-talk",
-          "School demands",
-          "Moving to a new school"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 10,
-        "text": "Early Adulthood involves adjusting to new life patterns and roles. Which scenario best illustrates a successful adjustment in this stage?",
-        "options": [
-          "A teenager focusing on peer acceptance",
-          "A middle-aged adult worrying about retirement",
-          "A young adult learning to profit from mistakes and take responsibility",
-          "A child developing fears of the dark"
-        ],
-        "answer": 2
-      },
-      {
-        "id": 11,
-        "text": "What does personal effectiveness primarily rely on?",
-        "options": [
-          "External validation",
-          "Innate characteristics like talents and skills",
-          "Financial resources",
-          "Social media presence"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 12,
-        "text": "Older adulthood is the fastest-growing age bracket. Which strategy best addresses the emotional needs of someone in this stage?",
-        "options": [
-          "Ignoring health concerns",
-          "Focusing only on financial planning",
-          "Engaging in suitable forms of entertainment and social connection",
-          "Avoiding any discussion of aging"
-        ],
-        "answer": 2
-      },
-      {
-        "id": 13,
-        "text": "Which best describes holistic development?",
-        "options": [
-          "Focusing only on academic success",
-          "Balancing mental, physical, social, emotional, and spiritual growth",
-          "Prioritizing financial stability above all",
-          "Avoiding emotional expression"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 14,
-        "text": "If a child in Early Childhood has a vivid imagination and struggles to distinguish real from imaginary, what should a caregiver do?",
-        "options": [
-          "Discourage imaginative play entirely",
-          "Clearly explain the difference between reality and fantasy without dismissing creativity",
-          "Isolate the child from social interaction",
-          "Encourage only logical and reality-based activities"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 15,
-        "text": "In which developmental stage do individuals typically begin to value family relationships and show emotional stability?",
-        "options": [
-          "Early adolescence",
-          "Middle adolescence",
-          "Late adolescence",
-          "Early adulthood"
-        ],
-        "answer": 2
-      },
-      {
-        "id": 16,
-        "text": "Which of the following is NOT a skill that increases personal efficiency?",
-        "options": [
-          "Determination",
-          "Procrastination",
-          "Self-confidence",
-          "Creativity"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 17,
-        "text": "Which is a common social challenge during adolescence?",
-        "options": [
-          "Excessive sleep",
-          "Youth violence",
-          "Overhydration",
-          "Lack of hobbies"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 18,
-        "text": "What term refers to the differentiation between right and wrong behavior?",
-        "options": [
-          "Autonomy",
-          "Morality",
-          "Identity",
-          "Emotional stability"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 19,
-        "text": "What is a common physical symptom of anxiety?",
-        "options": [
-          "Increased appetite",
-          "Decreased heart rate",
-          "Sweating and trembling",
-          "Improved concentration"
-        ],
-        "answer": 2
-      },
-      {
-        "id": 20,
-        "text": "Which eating disorder is characterized by binge eating followed by purging?",
-        "options": [
-          "Anorexia Nervosa",
-          "Bulimia Nervosa",
-          "Bipolar Disorder",
-          "Clinical Depression"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 21,
-        "text": "Mood swings, irritability, and social withdrawal may indicate which mental health issue?",
-        "options": [
-          "Euphoria",
-          "Depression",
-          "Hyperactivity",
-          "Optimism"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 22,
-        "text": "Which is a healthy way to cope with stress?",
-        "options": [
-          "Avoiding all social interactions",
-          "Practicing abdominal breathing",
-          "Increasing caffeine intake",
-          "Suppressing emotions"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 23,
-        "text": "What is the primary focus of spiritual development during adolescence?",
-        "options": [
-          "Financial planning",
-          "Career selection",
-          "Exploring questions about existence and faith",
-          "Physical fitness"
-        ],
-        "answer": 2
-      },
-      {
-        "id": 24,
-        "text": "Which stage of human development is called the 'gang and creativity age'?",
-        "options": [
-          "Infancy",
-          "Early childhood",
-          "Late childhood",
-          "Adolescence"
-        ],
-        "answer": 2
-      },
-      {
-        "id": 25,
-        "text": "What does 'identity' refer to in adolescent development?",
-        "options": [
-          "Physical appearance",
-          "Set of qualities and beliefs that differentiate a person",
-          "Academic performance",
-          "Family background"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 26,
-        "text": "Which is an example of an emotional symptom of stress?",
-        "options": [
-          "Improved sleep",
-          "Feeling overwhelmed",
-          "Increased energy",
-          "Clear thinking"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 27,
-        "text": "What is a key characteristic of middle adolescence?",
-        "options": [
-          "Complete physical maturity",
-          "Strong interest in romantic relationships",
-          "Lack of peer influence",
-          "Disinterest in future planning"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 28,
-        "text": "Which skill helps an individual stay focused on goals without distraction?",
-        "options": [
-          "Creativity",
-          "Persistence",
-          "Stress management",
-          "Self-confidence"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 29,
-        "text": "What does the 'fight' response to stress typically involve?",
-        "options": [
-          "Feelings of numbness",
-          "Restless legs",
-          "Aggressiveness and anger",
-          "Social withdrawal"
-        ],
-        "answer": 2
-      },
-      {
-        "id": 30,
-        "text": "Which is NOT a component of personal effectiveness?",
-        "options": [
-          "Time management",
-          "Talent identification",
-          "Ignoring feedback",
-          "Skill development"
-        ],
-        "answer": 2
-      },
-      {
-        "id": 31,
-        "text": "How is social health related to personal development?",
-        "options": [
-          "It is only about having many friends.",
-          "It involves communication, compromise, and cooperation.",
-          "It focuses solely on family relationships.",
-          "It ignores emotional connections."
-        ],
-        "answer": 1
-      },
-      {
-        "id": 32,
-        "text": "Which developmental task is associated with late adolescence?",
-        "options": [
-          "Beginning to walk and talk",
-          "Preparing for adult roles",
-          "Learning to share toys",
-          "Retiring from work"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 33,
-        "text": "What is a common cognitive problem during adolescence?",
-        "options": [
-          "Improved memory",
-          "Inability to concentrate",
-          "Enhanced judgment",
-          "Increased creativity"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 34,
-        "text": "Which of the following is a positive emotion?",
-        "options": [
-          "Jealousy",
-          "Relief",
-          "Annoyance",
-          "Fear"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 35,
-        "text": "What is the primary purpose of the abdominal breathing technique?",
-        "options": [
-          "To increase stress",
-          "To improve digestion",
-          "To promote relaxation",
-          "To enhance physical strength"
-        ],
-        "answer": 2
-      },
-      {
-        "id": 36,
-        "text": "Which statement best describes 'stress as relational'?",
-        "options": [
-          "Stress is only a physical response.",
-          "Stress arises from the interaction between a person and their environment.",
-          "Stress is always harmful.",
-          "Stress is unrelated to emotions."
-        ],
-        "answer": 1
-      },
-      {
-        "id": 37,
-        "text": "What distinguishes internal stressors from external stressors?",
-        "options": [
-          "Internal stressors come from outside events; external from thoughts.",
-          "Internal stressors originate from personal thoughts; external from outside situations.",
-          "Both are caused by genetic factors.",
-          "Neither affects emotional well-being."
-        ],
-        "answer": 1
-      },
-      {
-        "id": 38,
-        "text": "Which indicates healthy adolescent development?",
-        "options": [
-          "Complete dependence on parents",
-          "Ability to plan for long-term goals",
-          "Avoidance of all risks",
-          "Lack of peer interaction"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 39,
-        "text": "What is the major developmental focus during the embryonic stage?",
-        "options": [
-          "Formation of vital organs",
-          "Development of social skills",
-          "Learning language",
-          "Building career plans"
-        ],
-        "answer": 0
-      },
-      {
-        "id": 40,
-        "text": "Which is a common family-related challenge in middle adolescence?",
-        "options": [
-          "Lack of interest in peer opinions",
-          "Increased dependency on parents",
-          "Arguments over rules and independence",
-          "Complete agreement with parental views"
-        ],
-        "answer": 2
-      },
-      {
-        "id": 41,
-        "text": "How does creativity contribute to personal effectiveness?",
-        "options": [
-          "It limits problem-solving options.",
-          "It allows for unconventional solutions.",
-          "It reduces emotional expression.",
-          "It discourages innovation."
-        ],
-        "answer": 1
-      },
-      {
-        "id": 42,
-        "text": "Which is a symptom of depression in men?",
-        "options": [
-          "Increased social engagement",
-          "Reduced sexual desire",
-          "Excessive happiness",
-          "Lack of anger"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 43,
-        "text": "What is a key element of autonomy in late adolescence?",
-        "options": [
-          "Total reliance on peers",
-          "Financial dependence on parents",
-          "Emancipation and vocational planning",
-          "Avoidance of all responsibilities"
-        ],
-        "answer": 2
-      },
-      {
-        "id": 44,
-        "text": "How is 'mental health' best defined?",
-        "options": [
-          "Absence of mental illness",
-          "State of well-being where one can cope with life's stresses",
-          "Constant happiness",
-          "Lack of emotional expression"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 45,
-        "text": "What is a common physical change during middle age?",
-        "options": [
-          "Improved eyesight",
-          "Hair thinning and graying",
-          "Increased muscle tone",
-          "Enhanced hearing"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 46,
-        "text": "Which is a social challenge related to adolescent reproductive health?",
-        "options": [
-          "Excessive exercise",
-          "Lack of access to appropriate healthcare",
-          "Overeating",
-          "Too much sleep"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 47,
-        "text": "What is the goal of 'zero navigation' when studying?",
-        "options": [
-          "To multitask efficiently",
-          "To minimize distractions",
-          "To increase social interaction",
-          "To delay task completion"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 48,
-        "text": "Which is a characteristic of early adolescence?",
-        "options": [
-          "Strong interest in long-term planning",
-          "High level of emotional stability",
-          "Curiosity about bodily changes",
-          "Complete independence from parents"
-        ],
-        "answer": 2
-      },
-      {
-        "id": 49,
-        "text": "How do peer relationships contribute to adolescent development?",
-        "options": [
-          "They prevent identity formation.",
-          "They encourage dependency on parents.",
-          "They foster independence and personal identity.",
-          "They eliminate the need for family support."
-        ],
-        "answer": 2
-      },
-      {
-        "id": 50,
-        "text": "Which risk behavior is common in middle adolescence?",
-        "options": [
-          "Avoiding new experiences",
-          "Excessive caution in decision-making",
-          "Experimentation with substances",
-          "Complete reliance on authority figures"
-        ],
-        "answer": 2
-      }
-    ]
-  },
-  {
-    "id": "sub_1768825675494",
-    "name": "Practical Research I",
-    "status": "disabled",
-    "duration": 60,
-    "questions": [
-      {
-        "id": 1,
-        "text": "Which of the following correctly defines 'inquiry' in research?",
-        "options": [
-          "A process of validating existing theories without questioning",
-          "A learning process that motivates one to obtain knowledge by asking questions",
-          "A method of gathering numerical data only",
-          "The final step in writing a research paper"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 2,
-        "text": "What is the main purpose of a 'Narrative Hook' in the Background of the Study?",
-        "options": [
-          "To present the methodology",
-          "To list the research questions",
-          "To draw the reader into the study",
-          "To state the scope and delimitations"
-        ],
-        "answer": 2
-      },
-      {
-        "id": 3,
-        "text": "Which research type aims to apply findings to societal problems or issues?",
-        "options": [
-          "Pure Research",
-          "Exploratory Research",
-          "Applied Research",
-          "Descriptive Research"
-        ],
-        "answer": 2
-      },
-      {
-        "id": 4,
-        "text": "What is the correct order of sections in Chapter 1 of a research paper?",
-        "options": [
-          "Significance, Background, Statement of the Problem, Scope",
-          "Background, Statement of the Problem, Significance, Scope",
-          "Scope, Background, Significance, Statement of the Problem",
-          "Background, Scope, Significance, Statement of the Problem"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 5,
-        "text": "Which of the following is a characteristic of Qualitative Research?",
-        "options": [
-          "Uses only numerical data",
-          "Requires controlled variables",
-          "Abounds with words and visuals",
-          "Avoids human interpretation"
-        ],
-        "answer": 2
-      },
-      {
-        "id": 6,
-        "text": "What does 'Scope and Delimitation' of a study primarily define?",
-        "options": [
-          "The theoretical framework",
-          "The boundaries and weaknesses of the study",
-          "The data analysis procedure",
-          "The list of references"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 7,
-        "text": "In research, what is a 'Purpose Statement'?",
-        "options": [
-          "A broad subject matter",
-          "The major intent or objective of the study",
-          "A list of variables",
-          "The final conclusion"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 8,
-        "text": "Which of the following is an example of a Secondary Data source?",
-        "options": [
-          "Personal interviews",
-          "Survey results",
-          "Government publications",
-          "Laboratory experiments"
-        ],
-        "answer": 2
-      },
-      {
-        "id": 9,
-        "text": "What is the main goal of Ethnography as a qualitative research type?",
-        "options": [
-          "To examine historical documents",
-          "To study a particular cultural group's lifestyle",
-          "To measure numerical relationships",
-          "To test a new theory"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 10,
-        "text": "Which term refers to the 'general educational issue or concern addressed in research'?",
-        "options": [
-          "Research Question",
-          "Purpose Statement",
-          "Research Problem",
-          "Topic"
-        ],
-        "answer": 2
-      },
-      {
-        "id": 11,
-        "text": "What is a key guideline in framing a research title?",
-        "options": [
-          "It must be more than 20 words",
-          "It must explicitly state the research design",
-          "It must list key variables",
-          "It must include the researcher's name"
-        ],
-        "answer": 2
-      },
-      {
-        "id": 12,
-        "text": "Which approach combines scientific and naturalistic methods?",
-        "options": [
-          "Pure Approach",
-          "Triangulation Approach",
-          "Positive Approach",
-          "Deductive Approach"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 13,
-        "text": "Which section of the research paper states who will benefit from the study?",
-        "options": [
-          "Background of the Study",
-          "Statement of the Problem",
-          "Significance of the Study",
-          "Scope and Delimitation"
-        ],
-        "answer": 2
-      },
-      {
-        "id": 14,
-        "text": "What type of research 'defines or gives a portrayal of a person, thing, or event'?",
-        "options": [
-          "Correlational",
-          "Explanatory",
-          "Descriptive",
-          "Action"
-        ],
-        "answer": 2
-      },
-      {
-        "id": 15,
-        "text": "Which of the following is NOT a good source of researchable problems?",
-        "options": [
-          "Personal fantasies without evidence",
-          "Previous research recommendations",
-          "National trends",
-          "Real-life student issues"
-        ],
-        "answer": 0
-      },
-      {
-        "id": 16,
-        "text": "A study aims to determine the relationship between sleep duration and academic performance of SHS students. Which research type is most appropriate?",
-        "options": [
-          "Descriptive",
-          "Correlational",
-          "Historical",
-          "Phenomenology"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 17,
-        "text": "Which research title is most appropriately framed according to the standards discussed?",
-        "options": [
-          "'A Study on Social Media'",
-          "'The Effect of Facebook Usage on Attention Span of Grade 11 Students'",
-          "'How Social Media is Bad for Students: A Qualitative Inquiry'",
-          "'An Investigation into the Relationship Between Two Variables'"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 18,
-        "text": "In a study on 'Math Anxiety and Problem-Solving Skills,' which part of Chapter 1 would explain why past studies show conflicting results?",
-        "options": [
-          "Significance of the Study",
-          "Background of the Study",
-          "Statement of the Problem",
-          "Scope and Delimitation"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 19,
-        "text": "A researcher writes: 'This study aims to explore the lived experiences of teenage mothers.' Which qualitative research type is this?",
-        "options": [
-          "Case Study",
-          "Ethnography",
-          "Phenomenology",
-          "Grounded Theory"
-        ],
-        "answer": 2
-      },
-      {
-        "id": 20,
-        "text": "Which of the following is the BEST example of a Research Question derived from the Purpose Statement: 'To identify factors affecting low grades in Mathematics'?",
-        "options": [
-          "What is Mathematics?",
-          "How many students fail Math?",
-          "What are the factors affecting low grades in Mathematics among SHS students?",
-          "Why do students dislike Math?"
-        ],
-        "answer": 2
-      },
-      {
-        "id": 21,
-        "text": "If a study uses both surveys and interviews to examine bullying, which research approach is being used?",
-        "options": [
-          "Scientific Approach",
-          "Naturalistic Approach",
-          "Triangulation Approach",
-          "Pure Approach"
-        ],
-        "answer": 2
-      },
-      {
-        "id": 22,
-        "text": "Which of the following topics is MOST appropriate for a qualitative case study?",
-        "options": [
-          "The GDP of the Philippines from 2000-2020",
-          "Coping Mechanisms of a Student with Dyslexia",
-          "The Effect of Light on Plant Growth",
-          "A Nationwide Survey on Voting Preferences"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 23,
-        "text": "What is the main weakness of a study that uses only self-reported questionnaires for data on social media addiction?",
-        "options": [
-          "Too broad scope",
-          "Possible subjectivity and reliability issues",
-          "Lack of literature support",
-          "Too few respondents"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 24,
-        "text": "Which Statement of the Problem is correctly phrased?",
-        "options": [
-          "'This study aims to prove that social media is harmful.'",
-          "'This study generally aims to determine the relationship between study habits and grades.'",
-          "'This study will answer everything about learning.'",
-          "'This study seeks to find out if students are happy.'"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 25,
-        "text": "Given the topic 'Online Learning Fatigue,' which Background of the Study opening is the strongest Narrative Hook?",
-        "options": [
-          "'Online learning is a method of education.'",
-          "'According to DepEd, 80% of students reported mental exhaustion after online classes.'",
-          "'This study is about online learning.'",
-          "'Many students use computers.'"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 26,
-        "text": "A study on 'Leadership Styles in Student Organizations' uses interviews, observations, and document review. Which qualitative research type does this resemble?",
-        "options": [
-          "Historical Analysis",
-          "Content Analysis",
-          "Case Study",
-          "Grounded Theory"
-        ],
-        "answer": 2
-      },
-      {
-        "id": 27,
-        "text": "Which of the following is a delimitation?",
-        "options": [
-          "The study is conducted at DLSAU.",
-          "The study uses random sampling.",
-          "The study does not include junior high school students.",
-          "The study aims to improve teaching strategies."
-        ],
-        "answer": 2
-      },
-      {
-        "id": 28,
-        "text": "What is the primary difference between 'Topic' and 'Research Problem'?",
-        "options": [
-          "Topic is specific, Research Problem is broad",
-          "Topic is broad, Research Problem narrows the topic into an issue",
-          "Topic is a question, Research Problem is an answer",
-          "There is no difference"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 29,
-        "text": "Which of the following Significance of the Study statements is MOST specific?",
-        "options": [
-          "'This study will help everyone.'",
-          "'Teachers may use the findings to design attention-focused activities.'",
-          "'The study is significant.'",
-          "'It will contribute to knowledge.'"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 30,
-        "text": "If a researcher wants to develop a new theory about student motivation during the pandemic, which qualitative type is best?",
-        "options": [
-          "Ethnography",
-          "Grounded Theory",
-          "Phenomenology",
-          "Historical Analysis"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 31,
-        "text": "Why is 'Triangulation Approach' considered advantageous?",
-        "options": [
-          "It uses only one data source",
-          "It allows viewing the research from multiple perspectives",
-          "It is the easiest approach",
-          "It avoids human subjectivity"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 32,
-        "text": "Which of the following is a researchable topic?",
-        "options": [
-          "The beauty of sunsets",
-          "The effectiveness of a new teaching method on student engagement",
-          "Why aliens exist",
-          "My personal opinion about movies"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 33,
-        "text": "In Grounded Theory, when does the theory emerge?",
-        "options": [
-          "Before data collection",
-          "During data collection and analysis",
-          "After writing the conclusion",
-          "It is borrowed from past studies"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 34,
-        "text": "Which is a limitation in a qualitative study?",
-        "options": [
-          "The sample size is small",
-          "The topic is timely",
-          "The respondents are cooperative",
-          "The data is plentiful"
-        ],
-        "answer": 0
-      },
-      {
-        "id": 35,
-        "text": "Based on the Purpose Statement 'To examine the impact of parental involvement on academic performance,' which research question is correctly formulated?",
-        "options": [
-          "What is academic performance?",
-          "How does parental involvement affect the academic performance of Grade 12 students?",
-          "Are parents important?",
-          "How many parents are involved?"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 36,
-        "text": "What is the main advantage of qualitative research in social settings?",
-        "options": [
-          "It provides statistical generalizability",
-          "It promotes deep understanding of human behavior in natural contexts",
-          "It is quick to conduct",
-          "It avoids subjectivity completely"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 37,
-        "text": "Which section of the paper would address 'Why is there a need to study this problem now?'",
-        "options": [
-          "Scope",
-          "Background",
-          "Significance",
-          "Title"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 38,
-        "text": "A study that examines language use in political speeches is an example of:",
-        "options": [
-          "Historical Analysis",
-          "Discourse Analysis",
-          "Case Study",
-          "Ethnography"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 39,
-        "text": "Which of the following is a good example of a 'clear need for research' narrative hook?",
-        "options": [
-          "'Education is important.'",
-          "'Many students use Facebook.'",
-          "'School dropout rates have increased by 20% in the last five years.'",
-          "'This study is interesting.'"
-        ],
-        "answer": 2
-      },
-      {
-        "id": 40,
-        "text": "From the Research Problem 'Low interest in Science among SHS students,' which is the best research title?",
-        "options": [
-          "'Science Education'",
-          "'Factors Affecting Low Interest in Science Among Senior High School Students'",
-          "'A Research Study'",
-          "'Why Students Hate Science'"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 41,
-        "text": "Which type of data is collected through direct observation or interaction?",
-        "options": [
-          "Secondary data",
-          "Primary data",
-          "Historical data",
-          "Published data"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 42,
-        "text": "If a study's background cites conflicting findings from previous studies, what is it establishing?",
-        "options": [
-          "Scope",
-          "Research Gap",
-          "Methodology",
-          "Data analysis"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 43,
-        "text": "In John Dewey's theory, what is essential for inquiry?",
-        "options": [
-          "Isolated thinking",
-          "Connected experiences",
-          "Memorization",
-          "Standardized testing"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 44,
-        "text": "Which of the following topics is TOO BROAD for a student research?",
-        "options": [
-          "'The History of the World'",
-          "'Reading Habits of Grade 11 STEM Students at DLSAU'",
-          "'Social Media Use and Attention Span in One Class'",
-          "'Coping Strategies of Public School Teachers in Manila'"
-        ],
-        "answer": 0
-      },
-      {
-        "id": 45,
-        "text": "For a study on 'Bullying in SHS,' which is the best example of a specific beneficiary in the Significance section?",
-        "options": [
-          "'All people'",
-          "'School counselors may use findings to design anti-bullying programs'",
-          "'It will be significant'",
-          "'Future researchers'"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 46,
-        "text": "What is the main difference between Pure and Applied Research?",
-        "options": [
-          "Pure Research is practical, Applied is theoretical",
-          "Pure Research increases knowledge, Applied solves societal problems",
-          "Pure Research uses numbers, Applied uses words",
-          "There is no difference"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 47,
-        "text": "Which of the following is NOT a characteristic of research?",
-        "options": [
-          "Accuracy",
-          "Bias",
-          "Objectiveness",
-          "Systematic process"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 48,
-        "text": "Why is 'Availability of Information' important in choosing a research topic?",
-        "options": [
-          "It makes the research easier to complete",
-          "It ensures there are sources to support the study",
-          "It guarantees publication",
-          "It avoids primary data collection"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 49,
-        "text": "Which of the following is a strength of qualitative research?",
-        "options": [
-          "It is highly objective",
-          "It allows statistical generalization",
-          "It promotes deep contextual understanding",
-          "It is quick to analyze"
-        ],
-        "answer": 2
-      },
-      {
-        "id": 50,
-        "text": "Given the Research Question 'How do SHS students perceive online learning?' which qualitative research type is most suitable?",
-        "options": [
-          "Historical Analysis",
-          "Phenomenology",
-          "Content Analysis",
-          "Correlational Research"
-        ],
-        "answer": 1
-      }
-    ]
-  },
-  {
-    "id": "sub_1768829089450",
-    "name": "H.O.P.E. 4",
-    "status": "disabled",
-    "duration": 60,
-    "questions": [
-      {
-        "id": 1,
-        "text": "What is the primary purpose of a tent?",
-        "options": [
-          "To store food away from animals",
-          "To provide portable shelter during outdoor activities",
-          "To mark camping territory",
-          "To serve as a cooking area"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 2,
-        "text": "Which tent type would be most suitable for a solo hiker concerned about weight and stealth camping?",
-        "options": [
-          "Ridge Tent",
-          "Dome Tent",
-          "Bivy Tent",
-          "Tunnel Tent"
-        ],
-        "answer": 2
-      },
-      {
-        "id": 3,
-        "text": "A family of five plans a car camping trip in rainy weather. Which tent should they avoid?",
-        "options": [
-          "Geodesic Tent",
-          "Tunnel Tent",
-          "Dome Tent (large size)",
-          "Ridge Tent"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 4,
-        "text": "What is a common disadvantage of Ridge/A-Frame Tents?",
-        "options": [
-          "Too spacious",
-          "Poor rain resistance",
-          "Lack of headroom",
-          "Difficult to pack"
-        ],
-        "answer": 2
-      },
-      {
-        "id": 5,
-        "text": "If you are camping in an area with strong winds, which tent design would provide the best stability due to its pole structure?",
-        "options": [
-          "Dome Tent",
-          "Geodesic Tent",
-          "Tunnel Tent",
-          "Bivy Tent"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 6,
-        "text": "Why are Dome Tents considered unstable in larger sizes?",
-        "options": [
-          "They use too many poles",
-          "Their curved structure spreads tension unevenly",
-          "They lack guy lines",
-          "They are made of heavy material"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 7,
-        "text": "What is the correct first step in pitching a tent?",
-        "options": [
-          "Hammer in tent pegs",
-          "Lay down an earth pad",
-          "Unpack tent supplies",
-          "Insert poles through the frame"
-        ],
-        "answer": 2
-      },
-      {
-        "id": 8,
-        "text": "You have to camp on soft, sandy ground. Which step in tent pitching should be modified?",
-        "options": [
-          "Use longer tent pegs or anchors",
-          "Skip the rain fly",
-          "Insert poles after raising tent",
-          "Omit earth pad"
-        ],
-        "answer": 0
-      },
-      {
-        "id": 9,
-        "text": "Which feature is NOT typically desirable in a Bivy Tent?",
-        "options": [
-          "Lightweight",
-          "Large porch area",
-          "Built-in bug net",
-          "Good ventilation"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 10,
-        "text": "Which tent type is described as 'essentially a dome tent but with more poles'?",
-        "options": [
-          "Tunnel Tent",
-          "Geodesic Tent",
-          "Ridge Tent",
-          "Bivy Tent"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 11,
-        "text": "Which knot is known as a stopper knot and is used in sailing and climbing?",
-        "options": [
-          "Sheet Bend",
-          "Figure-of-Eight Knot",
-          "Square Knot",
-          "Slip Knot"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 12,
-        "text": "You need to join two ropes of different thicknesses securely. Which knot is most appropriate?",
-        "options": [
-          "Overhand Knot",
-          "Square Knot",
-          "Sheet Bend",
-          "Half Hitch"
-        ],
-        "answer": 2
-      },
-      {
-        "id": 13,
-        "text": "Why is a Slip Knot not recommended for securing heavy loads?",
-        "options": [
-          "It is difficult to tie",
-          "It tightens permanently",
-          "It can loosen when the standing end is pulled",
-          "It only works with synthetic rope"
-        ],
-        "answer": 2
-      },
-      {
-        "id": 14,
-        "text": "The Square Knot is also known as:",
-        "options": [
-          "Reef Knot",
-          "Hangman's Knot",
-          "Bowline",
-          "Fisherman's Knot"
-        ],
-        "answer": 0
-      },
-      {
-        "id": 15,
-        "text": "In a survival scenario, which knot would be best for setting up a temporary shelter using a tarp and tree?",
-        "options": [
-          "Noose Knot",
-          "Figure-of-Eight",
-          "Overhand Knot",
-          "Slip Knot with adjustable loop"
-        ],
-        "answer": 3
-      },
-      {
-        "id": 16,
-        "text": "Design a scenario where a Noose Knot is used ethically in camping.",
-        "options": [
-          "Securing food bags from animals",
-          "First-aid splint tying",
-          "Climbing harness backup",
-          "Hanging a lantern from a branch"
-        ],
-        "answer": 3
-      },
-      {
-        "id": 17,
-        "text": "What is the main function of a 'stopper knot'?",
-        "options": [
-          "To join two ropes",
-          "To prevent rope ends from fraying",
-          "To create a loop",
-          "To stop a rope from slipping through a hole"
-        ],
-        "answer": 3
-      },
-      {
-        "id": 18,
-        "text": "Which knot becomes tighter under load but can be easily loosened?",
-        "options": [
-          "Square Knot",
-          "Sheet Bend",
-          "Noose Knot",
-          "Overhand Knot"
-        ],
-        "answer": 2
-      },
-      {
-        "id": 19,
-        "text": "If you need to quickly tie a knot that can be released with one pull, which do you choose?",
-        "options": [
-          "Figure-of-Eight",
-          "Slip Knot",
-          "Square Knot",
-          "Half Hitch"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 20,
-        "text": "The ______ is a bend knot used to join two ropes of different diameters.",
-        "options": [
-          "Overhand Knot",
-          "Square Knot",
-          "Sheet Bend",
-          "Half Hitch"
-        ],
-        "answer": 2
-      },
-      {
-        "id": 21,
-        "text": "Outdoor recreation is defined as an activity done during ______ for personal reasons.",
-        "options": [
-          "Work time",
-          "Subsistence time",
-          "Free time",
-          "Existence time"
-        ],
-        "answer": 2
-      },
-      {
-        "id": 22,
-        "text": "Why is free time essential for outdoor recreation according to Clayne R. Jensen?",
-        "options": [
-          "It is the only time when people are not tired",
-          "It is the period after existence and subsistence time",
-          "It is mandated by law",
-          "It is when weather is best"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 23,
-        "text": "Which of the following is NOT a benefit of outdoor recreation?",
-        "options": [
-          "Spiritual benefits",
-          "Economic dependency",
-          "Social benefits",
-          "Physical health benefits"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 24,
-        "text": "The Philippines has the ______ longest coastline in the world.",
-        "options": [
-          "Third",
-          "Fifth",
-          "Seventh",
-          "Tenth"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 25,
-        "text": "You want an outdoor activity that combines land and water. Which do you choose?",
-        "options": [
-          "Parasailing",
-          "Canyoneering",
-          "Bird-watching",
-          "Rock climbing"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 26,
-        "text": "Why might mountain trekking be classified under Trail Class 3?",
-        "options": [
-          "It requires scrambling using hands for balance",
-          "It is a simple stroll",
-          "It needs artificial climbing methods",
-          "It is only for experts with ropes"
-        ],
-        "answer": 0
-      },
-      {
-        "id": 27,
-        "text": "What does 'Masl' stand for in mountain descriptions?",
-        "options": [
-          "Meters above sea level",
-          "Mountain ascent level",
-          "Maximum altitude slope limit",
-          "Measured altitude slope"
-        ],
-        "answer": 0
-      },
-      {
-        "id": 28,
-        "text": "Based on difficulty ratings, which mountain would be the hardest for a beginner?",
-        "options": [
-          "Mt. Pulag via Ambangeg (5/9)",
-          "Mt. Apo via Kidapawan (7/9)",
-          "Mt. Maculot (2/9)",
-          "Mt. Batulao (3/9)"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 29,
-        "text": "Plan a 3-day trip for a group wanting moderate difficulty and beach access.",
-        "options": [
-          "Mt. Pulag + Baguio",
-          "Mt. Daguldul + Batangas beach",
-          "Mt. Kanla-on + Bacolod",
-          "Mt. Ugo + Benguet rice terraces"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 30,
-        "text": "Which mountain is known as the 'playground of the gods'?",
-        "options": [
-          "Mt. Apo",
-          "Mt. Pulag",
-          "Mt. Pinatubo",
-          "Mt. Guiting-Guiting"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 31,
-        "text": "Why is Mt. Pinatubo's height now 1,486 meters instead of 1,745 meters?",
-        "options": [
-          "Erosion",
-          "Volcanic eruption destroyed the summit",
-          "Measurement error",
-          "Landslide"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 32,
-        "text": "What makes Mt. Kitanglad Range ecologically significant?",
-        "options": [
-          "It has the tallest peak in Luzon",
-          "It contains virgin forests and high biodiversity",
-          "It is the most active volcano",
-          "It is the easiest to climb"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 33,
-        "text": "Who said, 'It is not the mountain we conquer, but ourselves'?",
-        "options": [
-          "Anijolette Dorado",
-          "Sir Edmund Hillary",
-          "Clayne R. Jensen",
-          "CNN Travel"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 34,
-        "text": "If you want to see a 'saw-toothed' mountain ridge, where should you go?",
-        "options": [
-          "Romblon",
-          "Cavite",
-          "Zambales",
-          "Benguet"
-        ],
-        "answer": 0
-      },
-      {
-        "id": 35,
-        "text": "What is the main reason people engage in outdoor recreation?",
-        "options": [
-          "To earn money",
-          "For personal satisfaction and enjoyment",
-          "To avoid work",
-          "To follow trends"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 36,
-        "text": "You are leading a group of 8 on a camping trip in a windy, rainy area. Which combination of tents is safest?",
-        "options": [
-          "Two large Dome tents",
-          "One Tunnel tent and one Geodesic tent",
-          "Three Ridge tents",
-          "Multiple Bivy tents"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 37,
-        "text": "A camper used a Square Knot to join climbing ropes, but it failed. Why?",
-        "options": [
-          "Square Knots slip under load",
-          "Square Knots are only for first aid",
-          "Square Knots require ropes of different sizes",
-          "Square Knots are only for decorative purposes"
-        ],
-        "answer": 0
-      },
-      {
-        "id": 38,
-        "text": "Design a knot system for securing a rain fly in strong wind using two trees and a rope.",
-        "options": [
-          "Two Half Hitches + Sheet Bend",
-          "Figure-of-Eight loop + Slip Knot adjustment",
-          "Square Knot + Overhand backup",
-          "Noose Knot + Slip Knot release"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 39,
-        "text": "Why is Mt. Guiting-Guiting considered very hard despite not being the tallest?",
-        "options": [
-          "Steep 87° slopes and tricky summits",
-          "Lack of trails",
-          "Active volcanic activity",
-          "Extreme cold"
-        ],
-        "answer": 0
-      },
-      {
-        "id": 40,
-        "text": "Which mountain would be best for a beginner who wants a manageable climb with a scenic view?",
-        "options": [
-          "Mt. Apo",
-          "Mt. Pulag",
-          "Mt. Pico de Loro",
-          "Mt. Kanla-on"
-        ],
-        "answer": 2
-      },
-      {
-        "id": 41,
-        "text": "You need to set up a tent on rocky ground where pegs cannot be hammered. What do you do?",
-        "options": [
-          "Use rocks to anchor guy lines",
-          "Skip pegs entirely",
-          "Lay tent flat without raising",
-          "Only set up rain fly"
-        ],
-        "answer": 0
-      },
-      {
-        "id": 42,
-        "text": "Propose a 2-day outdoor recreation itinerary for someone visiting Siargao who isn't a surfer.",
-        "options": [
-          "Cloud Nine viewing + island hopping + trekking",
-          "Only beach lounging",
-          "Mountain biking + caving",
-          "Skydiving + parasailing"
-        ],
-        "answer": 0
-      },
-      {
-        "id": 43,
-        "text": "Which statement about outdoor recreation is FALSE?",
-        "options": [
-          "It must be done in natural environments only",
-          "It can have economic benefits",
-          "It contributes to psycho-emotional health",
-          "It is done during free time"
-        ],
-        "answer": 0
-      },
-      {
-        "id": 44,
-        "text": "What is the ecological risk of promoting mountaineering in biodiverse areas like Mt. Kitanglad?",
-        "options": [
-          "Increased trail erosion and wildlife disturbance",
-          "Decreased tourism revenue",
-          "Reduced need for guides",
-          "Improved local infrastructure only"
-        ],
-        "answer": 0
-      },
-      {
-        "id": 45,
-        "text": "Develop a Leave No Trace camping guideline using tent pitching and knot tying principles.",
-        "options": [
-          "Use biodegradable pegs, avoid cutting live branches for knots",
-          "Leave ropes tied to trees for next campers",
-          "Bury tent pegs after use",
-          "Use only Square Knots for easy removal"
-        ],
-        "answer": 0
-      },
-      {
-        "id": 46,
-        "text": "Why is the story of Anijolette 'Babeyboo' Dorado significant in outdoor recreation?",
-        "options": [
-          "Shows age is not a barrier to outdoor engagement",
-          "Promotes competitive climbing",
-          "Highlights the dangers of hiking with children",
-          "Encourages professional mountaineering only"
-        ],
-        "answer": 0
-      },
-      {
-        "id": 47,
-        "text": "If you are camping near a river and expect heavy rain, which tent type should you prioritize?",
-        "options": [
-          "Dome tent with good ventilation",
-          "Ridge tent with steep roof",
-          "Tunnel tent with large vestibule",
-          "Geodesic tent with high waterproof rating"
-        ],
-        "answer": 1
-      },
-      {
-        "id": 48,
-        "text": "In knot tying, why is the Figure-of-Eight preferred over the Overhand Knot for climbing?",
-        "options": [
-          "It is stronger and easier to untie after loading",
-          "It is quicker to tie",
-          "It uses less rope",
-          "It is more decorative"
-        ],
-        "answer": 0
-      },
-      {
-        "id": 49,
-        "text": "Imagine a scenario where you must secure a food bag from animals using a rope and tree. Which knot combination is safest?",
-        "options": [
-          "Slip Knot + Half Hitch",
-          "Noose Knot + Sheet Bend",
-          "Figure-of-Eight loop + carabiner",
-          "Square Knot + Overhand backup"
-        ],
-        "answer": 2
-      },
-      {
-        "id": 50,
-        "text": "Which mountain's history includes both wartime significance and natural oasis features?",
-        "options": [
-          "Mt. Mariveles - Tarak Ridge",
-          "Mt. Pulag",
-          "Mt. Kanla-on",
-          "Mt. Pinatubo"
-        ],
-        "answer": 0
-      }
-    ]
-  }
-];
+    ];
 
     let SUBJECTS_DB = [];
     let ACTIVE_SUBJECT_ID = null;
@@ -3342,6 +3435,7 @@
       const settingsPanel = document.getElementById('subject-settings-panel');
       settingsPanel.style.display = 'block';
       document.getElementById('sub-duration').value = sub.duration || 30;
+      document.getElementById('sub-password').value = sub.password || "";
 
       renderSubjectList();
       renderQuestionList();
@@ -3358,6 +3452,7 @@
       }
 
       sub.duration = newDuration;
+      sub.password = document.getElementById('sub-password').value.trim();
       saveDB();
 
       // Visual feedback
@@ -3678,6 +3773,8 @@
     }
 
     // --- EXAM START LOGIC ---
+    let pendingExamData = null;
+
     function startExam() {
       const nameInput = document.getElementById('fullName');
       const gradeInput = document.getElementById('gradeSection');
@@ -3698,6 +3795,48 @@
         return;
       }
 
+      // Check if subject has a password
+      if (subjectObj.password && subjectObj.password.trim() !== "") {
+        pendingExamData = { name, grade, subjectObj };
+        showPasswordPrompt(subjectObj.name);
+        return;
+      }
+
+      // No password, proceed immediately
+      proceedToStartExam(name, grade, subjectObj);
+    }
+
+    function showPasswordPrompt(subjectName) {
+      document.getElementById('pwd-subject-name').innerText = subjectName;
+      document.getElementById('subjectPasswordInput').value = "";
+      document.getElementById('sub-pwd-error').style.display = 'none';
+      document.getElementById('subject-password-modal').style.display = 'flex';
+      document.getElementById('subjectPasswordInput').focus();
+    }
+
+    function closePasswordPrompt() {
+      document.getElementById('subject-password-modal').style.display = 'none';
+      pendingExamData = null;
+    }
+
+    function verifySubjectPassword() {
+      const input = document.getElementById('subjectPasswordInput').value;
+      const errorMsg = document.getElementById('sub-pwd-error');
+
+      if (!pendingExamData) return;
+
+      if (input === pendingExamData.subjectObj.password) {
+        const { name, grade, subjectObj } = pendingExamData;
+        document.getElementById('subject-password-modal').style.display = 'none';
+        pendingExamData = null;
+        proceedToStartExam(name, grade, subjectObj);
+      } else {
+        errorMsg.style.display = 'block';
+        document.getElementById('subjectPasswordInput').style.borderColor = "var(--error-color)";
+      }
+    }
+
+    function proceedToStartExam(name, grade, subjectObj) {
       // Clone questions for this attempt
       QUESTIONS = JSON.parse(JSON.stringify(subjectObj.questions));
       studentInfo = { name, grade, subject: subjectObj.name };
@@ -4148,8 +4287,6 @@
 
 
 
+</body>
 
-
-
-
-</body></html>
+</html>
