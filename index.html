@@ -1275,6 +1275,8 @@
           onclick="document.getElementById('importFile').click()">📂 Import JSON</button>
         <button class="badge-btn" style="background: #e91e63; color: white; flex: 1; min-width: 150px;"
           onclick="downloadUpdatedApp()">🚀 Download App (Save to File)</button>
+        <button class="badge-btn" style="background: #607d8b; color: white; flex: 1;" onclick="resetDBToFile()">🔄 Reset
+          to File Defaults</button>
       </div>
       <input type="file" id="importFile" style="display: none;" accept=".json" onchange="importQuestionsJSON(event)">
     </div>
@@ -3184,12 +3186,30 @@
     // Load subjects from local storage or use defaults
     // Initialize subjects from defaults (do not store on device for better sync)
     function initDB() {
-      SUBJECTS_DB = JSON.parse(JSON.stringify(DEFAULT_SUBJECTS));
+      const saved = localStorage.getItem('subjects_db');
+      if (saved) {
+        try {
+          SUBJECTS_DB = JSON.parse(saved);
+        } catch (e) {
+          console.error("Error loading from localStorage:", e);
+          SUBJECTS_DB = JSON.parse(JSON.stringify(DEFAULT_SUBJECTS));
+        }
+      } else {
+        SUBJECTS_DB = JSON.parse(JSON.stringify(DEFAULT_SUBJECTS));
+      }
     }
 
     function saveDB() {
-      // Intentionally left blank as per user request to not store questions on the device
-      console.log("SaveDB: Questions are not stored on device to ensure direct sync from file.");
+      localStorage.setItem('subjects_db', JSON.stringify(SUBJECTS_DB));
+      console.log("Database saved to localStorage for persistence.");
+    }
+
+    function resetDBToFile() {
+      if (confirm("This will clear all changes made in the dashboard and reload the original settings from the file. Proceed?")) {
+        localStorage.removeItem('subjects_db');
+        localStorage.removeItem('exam_submission'); // Also clear submissions for a full reset
+        location.reload();
+      }
     }
 
     initDB();
